@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <!-- element to display the day and time -->
+        <div id="day"></div>
+        <!-- website logo -->
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+        <!-- element to display the current date -->
+        <div id="date"></div>
+
+        <!-- menu icon with three horizontal lines -->
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+
+
+        <ul id="navigationmenu">
+        </ul>
+    </nav>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+    <!-- script to display current time and date in navigation bar -->
+    <script>
+        function time() {
+            const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            var d = new Date();
+            let day = weekday[d.getDay()];
+            let month = months[d.getMonth()];
+
+            document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+            document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+        }
+
+        setInterval(time, 1000);
+    </script>
+    <!-- script for menu icon to open and close navigation menu -->
+    <script>
+        var status = 1
+        document.getElementById("menu").addEventListener("click", statusmenu);
+
+        function statusmenu() {
+
+            if (status == 1) {
+                document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                document.getElementById("midfade").style.opacity = "0";
+                document.getElementById("toprotate").style.width = "80%";
+                document.getElementById("botrotate").style.width = "80%";
+                document.getElementById("menu").style.transform = "translateX(-30vw)";
+                document.getElementById("navigationmenu").style.right = "0vw";
+                document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                menunav();
+
+
+                status = 0;
+            } else if (status == 0) {
+                document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                document.getElementById("midfade").style.opacity = "1";
+                document.getElementById("toprotate").style.width = "50%";
+                document.getElementById("botrotate").style.width = "50%";
+                document.getElementById("menu").style.transform = "translateX(0px)";
+                document.getElementById("navigationmenu").innerHTML = "";
+                document.getElementById("navigationmenu").style.right = "-30vw";
+                document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                status = 1;
+
+            }
+
+        }
+
+        function menunav() {
+
+            const object = ["Home", "About", "Blogs", "Fashion Icons"];
+            const link = ["Home Page.html", "About.html", "Blogs.html", "Fashion Icons.html"];
+            for (let i = 0; i < object.length; i++) {
+                setTimeout(function() {
+                    const navi = document.createElement("li");
+                    const para = document.createElement("a");
+                    para.href = link[i];
+                    para.innerText = object[i];
+                    navi.appendChild(para);
+                    document.getElementById("navigationmenu").appendChild(navi);
+                    var parent = document.getElementById("navigationmenu");
+                    parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                }, i * 100);
+            }
+        }
+    </script>
+
+    <!-- Latest Blogs section -->
+    <div class="display-pieces-header-box">
+        <!-- Latest Blogs Header -->
+        <h1 class="all-section-headers">
+            Latest Blogs
+        </h1>
+    </div>
+    <!-- Box for all the blogs -->
+    <div class="diaries">
+        <!-- Box for each blogs -->
+        <div class="diaries-item-box">
+
+            <div class="diaries-item-image">
+                <!-- Blog Image -->
+                <img src="../img/hp/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg">
+            </div>
+            <div class="diaries-item-text">
+                <!-- Blog header -->
+                <h2>
+                    Seren Carney Shines in a Black Jacket
+                </h2>
+                <div class="diary-date">
+                    <div>Friday</div>
+                    <div>17/2/2023</div>
+                </div>
+                <!-- Blog description -->
+                <p>
+                    Seren Carney impressed me with her sense of fashion. The post focuses on the black Abercrombie Classic jacket and dark sunglasses that Seren wore, which added a touch of sophistication to her look. Seren spoke about her approach to fashion and how she
+                    likes to experiment with different looks. The post also provides details on the outfit, describing the jacket as high-quality and timeless. The post concludes by highlighting the simplicity and elegance of Seren's outfit and expressing
+                    excitement for her future fashion choices.
+                </p>
+                <!-- Blog featuring -->
+                <div class="diary-bottom-box">
+                    <div>- Ft. Seren Carney</div>
+                    <!-- Read more button -->
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read Post</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Second blog -->
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/MSCHF big red boots.jpg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    Astro Girl
+                </h2>
+                <div class="diary-date">
+                    <div>Sunday</div>
+                    <div>21/2/2023</div>
+                </div>
+                <p>
+                    I couldn't help but notice the big red Astro Boy boots she was wearing. In my review, I complimented how cute and stylish the boots looked on her, and how they added a pop of color and personality to her overall look. Sarah shared her personal fashion
+                    philosophy and style tips, emphasizing the importance of feeling comfortable and confident in what you wear. Overall, I was impressed with Sarah's fashion sense and how effortlessly she pulled off such a bold look with those amazing
+                    boots.
+                </p>
+                <div class="diary-bottom-box">
+                    <div>- Ft. Sarah Snyder</div>
+                    <a href="Astro Girl.html">Read Post</a>
+                </div>
+            </div>
+        </div>
+        <!-- Third Blog -->
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/bryan kith white jacke.jpg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    White On White
+                </h2>
+                <div class="diary-date">
+                    <div>Monday</div>
+                    <div>25/2/2022</div>
+                </div>
+                <p>
+                    I wrote about Bryan Cranston's recent appearance for the Kith Spring 2023 collection on social media. Bryan was seen wearing a white Kith jacket paired with a full white outfit, and I couldn't help but comment on how amazing the outfit looked on him.
+                    The combination of colors and style was simply stunning, and I was impressed by the attention to detail and the quality of the materials used in the outfit. In addition, the stylish sunglasses he was wearing complemented the outfit
+                    perfectly, creating a cohesive and elegant appearance. The frame design and color of the sunglasses were a great example of how to elevate an outfit with the right accessories. Overall, I think that Bryan's white-on-white look and
+                    choice of sunglasses were a great example of how to create a chic and sophisticated outfit that is perfect for any occasion.
+                </p>
+                <div class="diary-bottom-box">
+                    <div>- Ft. Bryan Cranston</div>
+                    <a href="White On White.html">Read Post</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- Fourth blog -->
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/eduardo-romero-red.jpg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    All Red: Bold Fashion
+                </h2>
+                <div class="diary-date">
+                    <div>Thursday</div>
+                    <div>29/2/2022</div>
+                </div>
+                <p>
+                    From her red leggings to her classic round sunglasses, and even her brown reddish boots, everything she wore was red. Despite the monochromatic color scheme, the outfit was far from boring. The woman's red dress was stunning and had a flowing, feminine
+                    design that looked great against the backdrop of the grass field she stood on. The red leggings were a bold choice that added a pop of color and texture to the outfit, while the classic round sunglasses added a touch of vintage flair.
+                    The brown reddish boots complemented the red color scheme perfectly, creating a cohesive and stylish appearance. Overall, the woman's all-red outfit was a bold and confident fashion statement that caught my eye. It was a great example
+                    of how to pull off a monochromatic look with style and grace.
+                    <div class="diary-bottom-box">
+                        <div>- Ft. Elinor Johnson</div>
+                        <a href="All Red-Bold Fashion.html">Read Post</a>
+                    </div>
+            </div>
+
+        </div>
+        <!-- Fifth Blog -->
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/future armani.jpeg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    Armani Swag
+                </h2>
+                <div class="diary-date">
+                    <div>Wednesday</div>
+                    <div>27/2/2023</div>
+                </div>
+                <p>
+                    A shared passion for Bugattis may have initially brought together Future and Giorgio Armani as seemingly unlikely friends, but it seems like the two are bonding over menswear as well. Landing in Milan amid the buzz of Pitti Uomo this week, the Atlanta
+                    rapper with model looks stepped out to lend his stylish support to his newfound bestie. Zipped up in a forest green shearling-lined jacket from the designer, the striking MC strode along in a pair of maroon and gray plaid wool trousers
+                    as he made his way to his front row perch at Armani’s show this morning. Perhaps not Fashion Week’s most conventional of suspects, Future accented his Italian threads with the key accoutrement worn by any fashion insider in the know:
+                    a pair of black wraparound sunglasses.
+                    <div class="diary-bottom-box">
+                        <div>- Ft. Future</div>
+                        <a href="Armani Swag.html">Read Post</a>
+                    </div>
+            </div>
+
+        </div>
+        <!-- Last blog -->
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/old man with frip.jpg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    Experience shapes style
+                </h2>
+                <div class="diary-date">
+                    <div>Saturday</div>
+                    <div>19/2/2023</div>
+                </div>
+                <p>Despite his advanced age, he was dressed impeccably, wearing light skin-brown tones and white Yeezy sneakers that gave him a modern and trendy look. His confidence and poise were apparent in the way he carried himself, and his outfit was
+                    a testament to his fashion sense and experience. It was a refreshing reminder that fashion is not limited to the young and that with age comes a unique sense of style that can be just as impactful and captivating.
+                    <div class="diary-bottom-box">
+                        <div>- Ft. Horatio Juno</div>
+                        <a href="Experience shapes style.html">Read Post</a>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Section To explore blog -->
+    <div class="display-pieces-header-box" id="moreblogs">
+        <!-- Section Header -->
+        <h1 class="all-section-headers">
+            Explore Blogs
+        </h1>
+    </div>
+    <!-- Explore section -->
+    <div class="explore-section">
+        <!-- Blog box -->
+        <div class="explore-content-box">
+            <div class="explore-content-box-image">
+                <img src="../img/hp/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg">
+            </div>
+            <div class="explore-content-box-right">
+                <!-- Blog title -->
+                <div class="explore-content-box-right-title">
+                    <h3>Seren Carney Shines in a Black Jacket</h3>
+                </div>
+            </div>
+            <!-- Read button -->
+            <a href="Seren Carney Shines in a Black Jacket.html" class="explore-content-box-button">Read</a>
+        </div>
+
+        <!-- second blog -->
+        <div class="explore-content-box">
+            <div class="explore-content-box-image">
+                <img src="../img/hp/MSCHF big red boots.jpg">
+            </div>
+            <div class="explore-content-box-right">
+                <div class="explore-content-box-right-title">
+                    <h3>Astro Girl</h3>
+                </div>
+            </div>
+            <a href="Astro Girl.html" class="explore-content-box-button">Read</a>
+        </div>
+        <!-- third blog -->
+        <div class="explore-content-box">
+            <div class="explore-content-box-image">
+                <img src="../img/hp/eduardo-romero-red.jpg">
+            </div>
+            <div class="explore-content-box-right">
+                <div class="explore-content-box-right-title">
+                    <h3>All Red: Bold Fashion</h3>
+                </div>
+            </div>
+            <a href="All Red-Bold Fashion.html" class="explore-content-box-button">Read</a>
+        </div>
+
+        <!-- fourth blog -->
+        <div class="explore-content-box">
+            <div class="explore-content-box-image">
+                <img src="../img/recommended/recomended-shoe-2.jpg">
+            </div>
+            <div class="explore-content-box-right">
+                <div class="explore-content-box-right-title">
+                    <h3>New Nike Element 55 Light Pink</h3>
+                </div>
+            </div>
+            <a href="New Nike Element 55 Light Pink.html" class="explore-content-box-button">Read</a>
+        </div>
+        <!-- fifth blog -->
+
+        <div class="explore-content-box">
+            <div class="explore-content-box-image">
+                <img src="../img/hp/bryan kith white jacke.jpg">
+            </div>
+            <div class="explore-content-box-right">
+                <div class="explore-content-box-right-title">
+                    <h3>White On White</h3>
+                </div>
+            </div>
+            <a href="White On White.html" class="explore-content-box-button">Read</a>
+        </div>
+        <!-- Last blog -->
+        <div class="explore-content-box">
+            <div class="explore-content-box-image">
+                <img src="../img/hp/old man with frip.jpg">
+            </div>
+            <div class="explore-content-box-right">
+                <div class="explore-content-box-right-title">
+                    <h3>Experience shapes style</h3>
+                </div>
+            </div>
+            <a href="Experience shapes style.html" class="explore-content-box-button">Read</a>
+        </div>
+
+
+
+
+
+
+    </div>
+    <!-- Tips section -->
+    <div class="display-pieces-header-box" id="tips">
+        <h1 class="all-section-headers">
+            Tips And Guides
+        </h1>
+    </div>
+    <!-- Tips section box -->
+    <div class="tips-section">
+        <div class="tips-content-box">
+            <div class="tips-content-box-image">
+                <!-- blog image -->
+                <img src="../img/Blogs/recommended-tamara-bellis-2.jpg">
+            </div>
+            <!-- blog text -->
+            <div class="tips-content-box-content">
+                <!-- blog header -->
+                <h2>Fashionable Frost: Dressing for Style and Comfort in Cold Weather</h2>
+                <!-- blog description -->
+                <p>To stay both fashionable and warm in cold weather, layering is key. Start with a moisture-wicking base layer and add a mid-layer of wool or down for insulation. Finish with a stylish outer layer that will protect you from the elements.
+                    Choose warm and breathable fabrics like wool or cashmere, and add stylish accessories like scarves, hats, and gloves for added warmth. With these tips, you can create a comfortable and fashionable cold weather outfit that will keep
+                    you cozy and stylish all season long.</p><a href="Fashionable Frost-Dressing for Style and Comfort in Cold Weather.html">Read</a>
+                <div>21/12/2022</div>
+            </div>
+
+        </div>
+        <!-- second tip -->
+        <div class="tips-content-box">
+            <div class="tips-content-box-image">
+                <img src="../img/tcoach2.jpg">
+            </div>
+            <div class="tips-content-box-content">
+                <h2>Styling Trench Coats: Tips for a Modern and Timeless Look</h2>
+                <p>A trench coat is a timeless and versatile piece of clothing that can be styled in many different ways. To achieve a modern and classic look, it is important to focus on finding the right fit, choosing neutral or bold colors, accessorizing
+                    with simple and understated pieces, layering, and experimenting with different outfit combinations. A well-fitted trench coat can elevate any outfit, making it a valuable addition to any wardrobe.</p><a href="Styling Trench Coats-Tips for a Modern and Timeless Look.html">Read</a>
+                <div>30/8/2021</div>
+            </div>
+
+        </div>
+        <!-- third tip -->
+        <div class="tips-content-box">
+            <div class="tips-content-box-image">
+                <img src="../img/Blogs/recommended-casualwear2-2.jpg">
+            </div>
+            <div class="tips-content-box-content">
+                <h2>Modestly Chic: Tips for Styling Modest Clothing</h2>
+                <p>To elevate your fashion sense while maintaining modesty, it's essential to style your modest clothing smartly. Layering a fitted shirt under a blazer or cardigan can add sophistication and texture to your outfit. Additionally, playing
+                    with colors, patterns, and textures can add depth and personality to your look. Accessorizing creatively with statement jewelry, bold belts, or colorful scarves can further elevate your outfit. Follow these tips to create a modest
+                    yet fashionable look that suits your personal style.</p><a href="Tips To Style Modest Clothing.html">Read</a>
+                <div>21/12/2022</div>
+            </div>
+
+        </div>
+        <!-- fourth tip -->
+        <div class="tips-content-box">
+            <div class="tips-content-box-image">
+                <img src="../img/Blogs/watchtips2.jpg">
+            </div>
+            <div class="tips-content-box-content">
+                <h2>Timeless Style: Tips for Choosing the Perfect Watch</h2>
+                <p>A watch can be more than just a timepiece - it's also a fashion statement. But with so many options to choose from, how do you find the perfect one? This blog post provides tips for selecting a watch that complements your personal style
+                    and needs. From considering the occasion to choosing the right size and materials, this post covers everything you need to know to find the perfect watch. Whether you're looking for a casual or formal option, following these tips will
+                    help you find a timeless piece that you'll cherish for years to come.</p><a href="Timeless Style-Tips for Choosing the Perfect Watch.html">Read</a>
+                <div>21/12/2022</div>
+            </div>
+
+        </div>
+        <!-- Fifth tip -->
+        <div class="tips-content-box">
+            <div class="tips-content-box-image">
+                <img src="../img/Blogs/jumpsuit.jpg">
+            </div>
+            <div class="tips-content-box-content">
+                <h2>Jump into Style: A Guide to Styling Jumpsuits</h2>
+                <p>Jumpsuits can be a versatile and stylish addition to any wardrobe, but they can also be challenging to style. This blog post offers a guide to styling jumpsuits, from choosing the right fit to accessorizing to suit different occasions.
+                    Experimenting with different accessories, such as statement earrings or a belt, can add personal flair to your jumpsuit ensemble. With these tips, you can confidently style a jumpsuit for any occasion, whether it's a casual outing
+                    with friends or a fancy dinner party.</p><a href="Jump into Style-A Guide to Styling Jumpsuits.html">Read</a>
+                <div>21/12/2022</div>
+            </div>
+
+        </div>
+        <!-- Last tip -->
+        <div class="tips-content-box">
+            <div class="tips-content-box-image">
+                <img src="../img/Blogs/summer.jpg">
+            </div>
+            <div class="tips-content-box-content">
+                <h2>Summer Fashion 101: Your Ultimate Guide to Dressing for the Season</h2>
+                <p>This blog post offers a comprehensive guide to summer fashion, from choosing the right fabrics to accessorizing for the season. It recommends lightweight and breathable materials, such as cotton and linen, to keep cool in the heat. It
+                    also suggests incorporating bright and playful colors, patterns, and prints to add personality and energy to your outfits. From maxi dresses to shorts to sandals, this guide covers the essential summer wardrobe staples and how to style
+                    them. With these tips, you'll be ready to step out in style this summer.</p><a href="Summer Fashion 101-Your Ultimate Guide to Dressing for the Season.html">Read</a>
+                <div>21/12/2022</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- recommended section -->
+    <div class="diary-related-posts-box">
+        <div class="display-pieces-header-box">
+            <!-- recommended header -->
+            <h1 class="all-section-headers">
+                Recommended
+            </h1>
+        </div>
+        <!-- recommended box -->
+        <div class="recommended-box">
+            <!-- blog box -->
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <!-- blog header -->
+                    <h2>New Nike Element 55 Light Pink</h2>
+                    <!-- blog date -->
+                    <p>February 20, 2022</p>
+                </div>
+                <!-- blog image -->
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recomended-shoe-2.jpg"></img>
+                </div>
+                <!-- blog read button -->
+                <div class="recommended-box-content-container-button-container">
+                    <a href="New Nike Element 55 Light Pink.html">Read</a>
+                </div>
+            </div>
+            <!-- second blog -->
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Modestly Chic: Tips for Styling Modest Clothing</h2>
+                    <p>December 19, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-casualwear2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Tips To Style Modest Clothing.html">Read</a>
+                </div>
+            </div>
+            <!-- third blog -->
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Seren Carney Shines in a Black Jacket</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read</a>
+                </div>
+            </div>
+            <!-- fourth blog -->
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Styling Trench Coats: Tips for a Modern and Timeless Look</h2>
+                    <p>August 30, 2021</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended-tcoach2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Styling Trench Coats-Tips for a Modern and Timeless Look.html">Read</a>
+                </div>
+            </div>
+            <!-- fifth blog -->
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Astro Girl</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/MSCHF big red boots.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Astro Girl.html">Read</a>
+                </div>
+            </div>
+            <!-- last blog -->
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Fashionable Frost: Dressing for Style and Comfort in Cold Weather</h2>
+                    <p>September 30, 2019</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-tamara-bellis-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Fashionable Frost-Dressing for Style and Comfort in Cold Weather.html">Read</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer section -->
+    <div class="footer">
+        <!-- footer logo -->
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <!-- footer divider -->
+        <hr>
+        <!-- footer links -->
+        <div class="foot2">
+            <!-- link contact box -->
+            <div class="foot2-contacts">
+                <!-- link icon -->
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <!-- link -->
+                <a href="https://www.facebook.com/">www.facebook.com/DRIPLER</a>
+            </div>
+            <!-- second contact -->
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="https://mail.google.com/mail/">DRIPLER@gmail.com</a>
+            </div>
+            <!-- third contact -->
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="https://www.pinterest.com/">pin.it/DRIPLER</a>
+            </div>
+            <!-- fourth contact -->
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="https://twitter.com/explore">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+    <!-- script to transition fade in and out when scrolled -->
+    <script>
+        const elements = document.getElementsByClassName("diaries-item-box");
+
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            const threshold = 0.25; // adjust this value to set when the opacity starts to fade
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            const topThreshold = Math.floor(threshold * windowHeight);
+            const bottomThreshold = Math.floor((1 - threshold) * windowHeight);
+
+            return rect.top <= bottomThreshold && rect.bottom >= topThreshold;
+        }
+
+        let lastScrollPosition = 0;
+
+        function setOpacity() {
+            for (let i = 0; i < elements.length; i++) {
+                if (isInViewport(elements[i])) {
+                    elements[i].style.opacity = "1";
+                    if (window.scrollY > lastScrollPosition) {
+                        elements[i].style.transform = "translateY(-30px)";
+                    } else {
+                        elements[i].style.transform = "translateY(30px)";
+                    }
+                } else {
+                    elements[i].style.opacity = "0";
+
+                }
+            }
+            lastScrollPosition = window.scrollY;
+        }
+
+        window.addEventListener("scroll", setOpacity);
+        window.addEventListener("resize", setOpacity);
+
+        setOpacity();
+    </script>
+</body>

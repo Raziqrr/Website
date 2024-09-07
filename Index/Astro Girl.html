@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro Girl</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <div id="day"></div>
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+
+        <div id="date"></div>
+        <!-- menu icon with three horizontal lines -->
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+        <!-- script to display current time and date in navigation bar -->
+        <script>
+            function time() {
+                const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+                var d = new Date();
+                let day = weekday[d.getDay()];
+                let month = months[d.getMonth()];
+
+                document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+                document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+            }
+
+            setInterval(time, 1000);
+        </script>
+        <!-- script for menu icon to open and close navigation menu -->
+        <script>
+            var status = 1
+            document.getElementById("menu").addEventListener("click", statusmenu);
+
+            function statusmenu() {
+
+                if (status == 1) {
+                    document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                    document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                    document.getElementById("midfade").style.opacity = "0";
+                    document.getElementById("toprotate").style.width = "80%";
+                    document.getElementById("botrotate").style.width = "80%";
+                    document.getElementById("menu").style.transform = "translateX(-30vw)";
+                    document.getElementById("navigationmenu").style.right = "0vw";
+                    document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                    menunav();
+
+
+                    status = 0;
+                } else if (status == 0) {
+                    document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("midfade").style.opacity = "1";
+                    document.getElementById("toprotate").style.width = "50%";
+                    document.getElementById("botrotate").style.width = "50%";
+                    document.getElementById("menu").style.transform = "translateX(0px)";
+                    document.getElementById("navigationmenu").innerHTML = "";
+                    document.getElementById("navigationmenu").style.right = "-30vw";
+                    document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                    status = 1;
+
+                }
+
+            }
+
+            function menunav() {
+
+                const object = ["Home", "About", "Blogs", "Fashion Icons"];
+                const link = ["Home Page.html", "About.html", "Blogs.html", "Fashion Icons.html"];
+                for (let i = 0; i < object.length; i++) {
+                    setTimeout(function() {
+                        const navi = document.createElement("li");
+                        const para = document.createElement("a");
+                        para.href = link[i];
+                        para.innerText = object[i];
+                        navi.appendChild(para);
+                        document.getElementById("navigationmenu").appendChild(navi);
+                        var parent = document.getElementById("navigationmenu");
+                        parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                    }, i * 100);
+                }
+            }
+        </script>
+        <ul id="navigationmenu">
+        </ul>
+
+    </nav>
+    <!-- blog section -->
+    <div class="greeting-container" style="background: url('../img/hp/MSCHF big red boots.jpg');">
+        <!-- blog image -->
+        <div class="greeting-container-display">
+            <img src="../img/hp/MSCHF big red boots.jpg">
+
+        </div>
+
+    </div>
+    <!-- blog date -->
+    <div class="date-container">
+        <div>
+            <h2 style="right: 0;">Friday</h2>
+        </div>
+        <div>
+            <h2 style="left: 0;">January 20, 2023</h2>
+        </div>
+    </div>
+    <!-- blog content -->
+    <div class="diary-content-box">
+        <h1>Astro Girl</h1>
+        <p>Fashion has always been a way for people to express themselves and their individuality. It's a form of art that allows us to create our own unique style and showcase it to the world. However, some people find it challenging to find the right balance
+            between comfort and style. That's where Sarah comes in, with her impeccable fashion sense and practical tips.</p>
+        <p>"Fashion should be an extension of your personality, and you should feel good in your clothes," says Sarah, sharing her fashion philosophy. She believes that you should feel comfortable and confident in what you wear. This is especially important
+            when it comes to footwear, as uncomfortable shoes can ruin your entire outfit and even your mood. Sarah's style is a perfect example of how to achieve this balance. She effortlessly combines bold pieces with comfortable basics to create a
+            look that is both stylish and practical.</p>
+        <p>One of the standout pieces in Sarah's wardrobe is her big red Astro Boy boots. "Accessories can really make an outfit pop. Don't be afraid to mix and match different pieces to create a unique look," Sarah advises. These boots are a statement piece
+            that adds a pop of color and personality to any outfit. "Investing in high-quality pieces is not only good for your wallet but also for the environment. It's important to promote sustainable fashion and reduce waste," says Sarah, highlighting
+            the durability of the boots, made from high-quality materials designed to last.</p>
+        <p>The boots are not only stylish but also comfortable, with a cushioned sole that provides support and stability. "Comfort and confidence are key when it comes to fashion. If you're not comfortable in what you're wearing, it will show in your demeanor,"
+            Sarah reminds us. The vibrant red color of the boots is eye-catching and unique, making them the perfect addition to any wardrobe.</p>
+        <p>Sarah's boots are versatile and can be paired with a variety of outfits. "It's important to find a balance between bold statement pieces and comfortable basics. This will ensure that you look stylish while also feeling at ease in what you're wearing,"
+            Sarah advises. They look great with jeans and a simple t-shirt, adding a touch of playfulness to a casual look. The boots also work well with a dress or skirt, making a bold statement and adding a touch of edge to a more formal outfit. The
+            boots are perfect for anyone who wants to add a pop of color and personality to their wardrobe.</p>
+        <p>Overall, Sarah's fashion sense and style tips are worth checking out. She provides valuable insights on how to achieve the perfect balance between comfort and style, and her big red Astro Boy boots are the perfect addition to any wardrobe.</p>
+
+
+        <div class="diary-button-box">
+            <!-- Read other blog button -->
+            <div class="diary-read-other-button">
+                <a href="Blogs.html">Read Other Blogs</a>
+                <div class="diary-read-other-button-decor"></div>
+            </div>
+        </div>
+    </div>
+    <!-- outfit section -->
+    <div class="outfit-box" id="outfit">
+        <!-- outfit header -->
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Outfit
+            </h1>
+        </div>
+        <div class="outfit-box-content-box">
+            <!-- outfit image -->
+            <div class="outfit-box-content-box-img-box">
+                <div class="outfit-box-content-box-img-box-decor">
+                    <img src="../img/hp/MSCHF-Big-Red-Boot-bootboot.png">
+                </div>
+            </div>
+            <div class="outfit-box-content-box-details-box-right">
+                <!-- outfit name -->
+                <h1 class="outfit-box-content-box-text-specifics">MSCHF Big Red Boot</h1>
+                <!-- outfit price -->
+                <div class="outfit-price-tag-box">
+                    <h4>RM1549.99</h4>
+
+                </div>
+                <!-- outfit description -->
+                <p class="outfit-details">The big red Astro Boy boots that Sarah wears are a fashionable and practical statement piece that add personality and flair to any outfit. The cushioned sole provides excellent support and stability, and the boots are made from high-quality
+                    materials that are durable and long-lasting. The vibrant red color of the boots is eye-catching and versatile, making them perfect for adding a pop of color to any look. The unique design is true to size and fits comfortably, making
+                    them worth the investment. Overall, these boots are highly recommended for anyone looking to add a touch of edge and playfulness to their wardrobe.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- recommended section -->
+    <div class="diary-related-posts-box">
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Recommended
+            </h1>
+        </div>
+        <div class="recommended-box">
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>New Nike Element 55 Light Pink</h2>
+                    <p>February 20, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recomended-shoe-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="New Nike Element 55 Light Pink.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Modestly Chic: Tips for Styling Modest Clothing</h2>
+                    <p>December 19, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-casualwear2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Tips To Style Modest Clothing.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Seren Carney Shines in a Black Jacket</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Styling Trench Coats: Tips for a Modern and Timeless Look</h2>
+                    <p>August 30, 2021</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended-tcoach2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Styling Trench Coats-Tips for a Modern and Timeless Look.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Astro Girl</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/MSCHF big red boots.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Astro Girl.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Fashionable Frost: Dressing for Style and Comfort in Cold Weather</h2>
+                    <p>September 30, 2019</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-tamara-bellis-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Fashionable Frost-Dressing for Style and Comfort in Cold Weather.html">Read</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <hr>
+        <div class="foot2">
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <a href="https://www.facebook.com/">www.facebook.com/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="https://mail.google.com/mail/">DRIPLER@gmail.com</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="https://www.pinterest.com/">pin.it/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="https://twitter.com/explore">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>

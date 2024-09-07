@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Alluring AlLLSAINTS Casi Heidi Kimono</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <div id="day"></div>
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+
+        <div id="date"></div>
+        <!-- menu -->
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+        <!-- script to display current time and date in navigation bar -->
+        <script>
+            function time() {
+                const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+                var d = new Date();
+                let day = weekday[d.getDay()];
+                let month = months[d.getMonth()];
+
+                document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+                document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+            }
+
+            setInterval(time, 1000);
+        </script>
+        <!-- script for menu icon to open and close navigation menu -->
+        <script>
+            var status = 1
+            document.getElementById("menu").addEventListener("click", statusmenu);
+
+            function statusmenu() {
+
+                if (status == 1) {
+                    document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                    document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                    document.getElementById("midfade").style.opacity = "0";
+                    document.getElementById("toprotate").style.width = "80%";
+                    document.getElementById("botrotate").style.width = "80%";
+                    document.getElementById("menu").style.transform = "translateX(-30vw)";
+                    document.getElementById("navigationmenu").style.right = "0vw";
+                    document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                    menunav();
+
+
+                    status = 0;
+                } else if (status == 0) {
+                    document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("midfade").style.opacity = "1";
+                    document.getElementById("toprotate").style.width = "50%";
+                    document.getElementById("botrotate").style.width = "50%";
+                    document.getElementById("menu").style.transform = "translateX(0px)";
+                    document.getElementById("navigationmenu").innerHTML = "";
+                    document.getElementById("navigationmenu").style.right = "-30vw";
+                    document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                    status = 1;
+
+                }
+
+            }
+
+            function menunav() {
+
+                const object = ["Home", "About", "Blogs", "Fashion Icons"];
+                const link = ["Home Page.html", "About.html", "Blogs.html", "Fashion Icons.html"];
+                for (let i = 0; i < object.length; i++) {
+                    setTimeout(function() {
+                        const navi = document.createElement("li");
+                        const para = document.createElement("a");
+                        para.href = link[i];
+                        para.innerText = object[i];
+                        navi.appendChild(para);
+                        document.getElementById("navigationmenu").appendChild(navi);
+                        var parent = document.getElementById("navigationmenu");
+                        parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                    }, i * 100);
+                }
+            }
+        </script>
+        <ul id="navigationmenu">
+        </ul>
+
+    </nav>
+    <!-- blog section -->
+    <div class="greeting-container" style="background: url('../img/kimono.jpg');">
+        <!-- blog image -->
+        <div class="greeting-container-display">
+            <img src="../img/kimono.jpg">
+
+        </div>
+
+    </div>
+    <!-- blog date -->
+    <div class="date-container">
+        <div>
+            <h2 style="right: 0;">Thursday</h2>
+        </div>
+        <div>
+            <h2 style="left: 0;">April 1, 2022</h2>
+        </div>
+    </div>
+    <!-- blog content -->
+    <div class="diary-content-box">
+        <h1>The Alluring AlLLSAINTS Casi Heidi Kimono</h1>
+        <p>AllSaints is a British fashion brand that is known for its unique blend of edgy and sophisticated styles. One of their standout pieces is the Casi Heidi Kimono, a luxurious and versatile addition to any woman's wardrobe. In this blog, we'll take
+            a closer look at the features and benefits of the Casi Heidi Kimono and explore some of the many ways you can wear it.</p>
+        <p>First and foremost, the Casi Heidi Kimono is made from 100% silk, giving it a soft, flowy feel that drapes beautifully on the body. The kimono comes in two classic colors, black and oyster white, which are neutral enough to pair with any outfit.
+            The elegant and alluring floral print adds a touch of femininity and sophistication, making it perfect for both casual and formal occasions.</p>
+        <p>The kimono's design is both versatile and flattering, with a loose fit that can be easily styled in a variety of ways. You can wear it open and flowing for a relaxed, bohemian look, or you can cinch it at the waist with the accompanying belt for
+            a more fitted and polished style. The kimono's wide sleeves and midi-length make it a perfect layering piece, whether you're wearing it over a dress or paired with jeans and a simple top.</p>
+        <p>One of the significant benefits of the Casi Heidi Kimono is its versatility. It can be dressed up or down, making it suitable for a variety of occasions. For a chic and sophisticated look, you can pair the kimono with black trousers and heels.
+            For a more casual look, you can wear it over a white tee and denim shorts. The kimono can also be worn as a beach cover-up, making it a perfect addition to your vacation wardrobe.</p>
+        <p>Another significant benefit of the Casi Heidi Kimono is its quality and durability. AllSaints is committed to using high-quality materials and ethical manufacturing practices, ensuring that the kimono will last for years to come. The brand's focus
+            on sustainability and social responsibility makes the Casi Heidi Kimono a conscientious choice for the fashion-conscious consumer.</p>
+        <p>The kimono is not just a stylish piece of clothing but also a work of art. The floral print on the kimono was created by a renowned textile artist, who designed the print exclusively for AllSaints. This unique and eye-catching print makes the
+            Casi Heidi Kimono stand out from other kimonos on the market and adds a touch of luxury to any outfit.</p>
+        <p>In conclusion, the AllSaints Casi Heidi Kimono is a versatile, luxurious, and sustainable addition to any woman's wardrobe. Its soft, flowy silk fabric and elegant floral print make it a timeless and alluring piece that can be styled in countless
+            ways. And with AllSaints' commitment to ethical manufacturing practices and sustainability, you can feel good about your purchase knowing that it was made with care for both the environment and the people who made it. Whether you're looking
+            for a chic and sophisticated look or a casual and comfortable outfit, the Casi Heidi Kimono is a must-have for any fashion-conscious woman's closet.</p>
+        <div class="diary-button-box">
+            <!-- Read other blog button -->
+            <div class="diary-read-other-button">
+                <a href="Blogs.html">Read Other Blogs</a>
+                <div class="diary-read-other-button-decor"></div>
+            </div>
+        </div>
+    </div>
+    <!-- outfit section -->
+    <div class="outfit-box" id="outfit">
+        <!-- outfit header -->
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Outfit
+            </h1>
+        </div>
+        <div class="outfit-box-content-box">
+            <div class="outfit-box-content-box-img-box">
+                <div class="outfit-box-content-box-img-box-decor">
+                    <img src="../img/hp/ALLSAINTS_Casi_Heidi_Kimono-removebg.png">
+                </div>
+            </div>
+            <div class="outfit-box-content-box-details-box-right">
+                <h1 class="outfit-box-content-box-text-specifics">ALLSAINTS Casi Heidi Kimono</h1>
+                <div class="outfit-price-tag-box">
+                    <h4>RM1079.99</h4>
+
+                </div>
+                <p class="outfit-details">The AllSaints Casi Heidi Kimono is a versatile and luxurious piece that is worth the investment. Made from 100% silk, it feels soft and flowy on the skin and features an elegant floral print that adds a touch of sophistication. Its loose
+                    fit and midi-length make it perfect for layering over dresses or paired with jeans and a simple top, while the accompanying belt can be used to create a more fitted and polished look. This kimono is also durable, thanks to its high-quality
+                    materials and ethical manufacturing practices. With its versatility and sustainability, the AllSaints Casi Heidi Kimono is a must-have for any fashion-conscious woman's wardrobe.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- recommended section -->
+    <div class="diary-related-posts-box">
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Recommended
+            </h1>
+        </div>
+        <div class="recommended-box">
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>New Nike Element 55 Light Pink</h2>
+                    <p>February 20, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recomended-shoe-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="New Nike Element 55 Light Pink.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Modestly Chic: Tips for Styling Modest Clothing</h2>
+                    <p>December 19, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-casualwear2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Tips To Style Modest Clothing.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Seren Carney Shines in a Black Jacket</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Styling Trench Coats: Tips for a Modern and Timeless Look</h2>
+                    <p>August 30, 2021</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended-tcoach2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Styling Trench Coats-Tips for a Modern and Timeless Look.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Astro Girl</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/MSCHF big red boots.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Astro Girl.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Fashionable Frost: Dressing for Style and Comfort in Cold Weather</h2>
+                    <p>September 30, 2019</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-tamara-bellis-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Fashionable Frost-Dressing for Style and Comfort in Cold Weather.html">Read</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <hr>
+        <div class="foot2">
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <a href="">www.facebook.com/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="">DRIPLER@gmail.com</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="">pin.it/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>

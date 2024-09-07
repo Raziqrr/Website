@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armani Swag</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <div id="day"></div>
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+
+        <div id="date"></div>
+
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+        <!-- script to display current time and date in navigation bar -->
+        <script>
+            function time() {
+                const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+                var d = new Date();
+                let day = weekday[d.getDay()];
+                let month = months[d.getMonth()];
+
+                document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+                document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+            }
+
+            setInterval(time, 1000);
+        </script>
+        <!-- script for menu icon to open and close navigation menu -->
+        <script>
+            var status = 1
+            document.getElementById("menu").addEventListener("click", statusmenu);
+
+            function statusmenu() {
+
+                if (status == 1) {
+                    document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                    document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                    document.getElementById("midfade").style.opacity = "0";
+                    document.getElementById("toprotate").style.width = "80%";
+                    document.getElementById("botrotate").style.width = "80%";
+                    document.getElementById("menu").style.transform = "translateX(-30vw)";
+                    document.getElementById("navigationmenu").style.right = "0vw";
+                    document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                    menunav();
+
+
+                    status = 0;
+                } else if (status == 0) {
+                    document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("midfade").style.opacity = "1";
+                    document.getElementById("toprotate").style.width = "50%";
+                    document.getElementById("botrotate").style.width = "50%";
+                    document.getElementById("menu").style.transform = "translateX(0px)";
+                    document.getElementById("navigationmenu").innerHTML = "";
+                    document.getElementById("navigationmenu").style.right = "-30vw";
+                    document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                    status = 1;
+
+                }
+
+            }
+
+            function menunav() {
+
+                const object = ["Home", "About", "Blogs", "Fashion Icons"];
+                const link = ["Home Page.html", "About.html", "Blogs.html", "Fashion Icons.html"];
+                for (let i = 0; i < object.length; i++) {
+                    setTimeout(function() {
+                        const navi = document.createElement("li");
+                        const para = document.createElement("a");
+                        para.href = link[i];
+                        para.innerText = object[i];
+                        navi.appendChild(para);
+                        document.getElementById("navigationmenu").appendChild(navi);
+                        var parent = document.getElementById("navigationmenu");
+                        parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                    }, i * 100);
+                }
+            }
+        </script>
+        <ul id="navigationmenu">
+        </ul>
+
+    </nav>
+    <!-- blog section -->
+    <div class="greeting-container" style="background: url('../img/hp/future armani.jpeg');">
+        <!-- blog image -->
+        <div class="greeting-container-display">
+            <img src="../img/hp/future armani.jpeg">
+
+        </div>
+
+    </div>
+    <!-- blog date -->
+    <div class="date-container">
+        <div>
+            <h2 style="right: 0;">Wednesday</h2>
+        </div>
+        <div>
+            <h2 style="left: 0;">February 27, 2023</h2>
+        </div>
+    </div>
+    <!-- blog content -->
+    <div class="diary-content-box">
+        <h1>Armani Swag</h1>
+        <p>Fashion and music have always been closely linked, with musicians often serving as trendsetters and fashion icons. From Elvis Presley's rhinestone jumpsuits to Madonna's cone bras, musicians have been pushing the boundaries of fashion for decades.
+            In recent years, however, the relationship between music and fashion has become even more intertwined, with artists and designers collaborating on everything from clothing lines to music videos.</p>
+        <p>One of the most notable collaborations in recent years has been between rapper Future and fashion designer Giorgio Armani. The two initially bonded over their shared love of Bugattis, but their friendship quickly grew to encompass their mutual
+            admiration for each other's work. Future has been spotted wearing Armani's designs on numerous occasions, and the rapper was front and center at Armani's fashion show in Milan this year.
+        </p>
+        <p>Future's appearance at the show was a clear sign of his support for Armani, but it was also a testament to his own fashion sense. The rapper has always been known for his bold style choices, often incorporating unexpected colors, textures, and
+            patterns into his outfits. His appearance at Armani's show was no different, as he donned a forest green shearling-lined jacket and maroon and gray plaid wool trousers. The outfit was striking, stylish, and perfectly suited for the occasion.
+        </p>
+        <p>In an interview, Future spoke about his love of fashion and how it has evolved over the years. "I've always been interested in fashion," he said. "But it wasn't until I started making money that I was able to really explore my style and take risks."
+            The rapper went on to explain how fashion is an important part of his identity as an artist, and how it allows him to express himself in new and exciting ways.</p>
+        <p>For Armani, Future's support is a testament to the designer's enduring influence on the world of fashion. Armani has been a mainstay in the industry for decades, known for his timeless designs and impeccable craftsmanship. His menswear collections,
+            in particular, are renowned for their classic style and attention to detail. By collaborating with Future, Armani is able to tap into a younger, more fashion-forward audience while still maintaining his reputation as one of the world's premier
+            designers.
+        </p>
+        <p>Future is no stranger to collaborations with high-end fashion brands. He has worked with brands such as Reebok, Gucci, and Balenciaga, and is known for his impeccable style and unique fashion sense. His appearance at Armani's show is just the
+            latest example of the rapper's influence on the world of fashion.</p>
+        <p>But it's not just about the clothes. Future and Armani's friendship is a testament to the power of shared passions to bring people together. The two men may come from very different backgrounds, but their love of Bugattis and fashion has created
+            a bond that transcends cultural and geographic boundaries. As Future said in an interview, "It's not just about the cars. Giorgio is a true artist, and I admire his dedication to his craft. He's a visionary, and it's an honor to be able to
+            support him and wear his clothes."</p>
+        <p>As fashion and music continue to evolve and intersect, it's clear that collaborations like the one between Future and Armani will become more and more common. Artists and designers are finding new ways to push the boundaries of style and creativity,
+            creating a new generation of trendsetters and influencers. For Future and Armani, their friendship and collaboration are a testament to the power of fashion to bring people together and inspire new ideas. Their shared passion for fashion has
+            created a unique partnership that is sure to inspire others in the industry for years to come.</p>
+
+
+
+        <div class="diary-button-box">
+            <!-- Read other blog button -->
+            <div class="diary-read-other-button">
+                <a href="Blogs.html">Read Other Blogs</a>
+                <div class="diary-read-other-button-decor"></div>
+            </div>
+        </div>
+    </div>
+    <!-- recommended section -->
+    <div class="diary-related-posts-box">
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Recommended
+            </h1>
+        </div>
+        <div class="recommended-box">
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>New Nike Element 55 Light Pink</h2>
+                    <p>February 20, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recomended-shoe-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="New Nike Element 55 Light Pink.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Modestly Chic: Tips for Styling Modest Clothing</h2>
+                    <p>December 19, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-casualwear2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Tips To Style Modest Clothing.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Seren Carney Shines in a Black Jacket</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Styling Trench Coats: Tips for a Modern and Timeless Look</h2>
+                    <p>August 30, 2021</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended-tcoach2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Styling Trench Coats-Tips for a Modern and Timeless Look.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Astro Girl</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/MSCHF big red boots.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Astro Girl.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Fashionable Frost: Dressing for Style and Comfort in Cold Weather</h2>
+                    <p>September 30, 2019</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-tamara-bellis-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Fashionable Frost-Dressing for Style and Comfort in Cold Weather.html">Read</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <hr>
+        <div class="foot2">
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <a href="https://www.facebook.com/">www.facebook.com/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="https://mail.google.com/mail/">DRIPLER@gmail.com</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="https://www.pinterest.com/">pin.it/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="https://twitter.com/explore">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>

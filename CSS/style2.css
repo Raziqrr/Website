@@ -1,0 +1,2559 @@
+:root {
+    /* Color Pallete */
+    /* primary color */
+    --color1: #d17b0f;
+    /* secondary color */
+    --color2: #D5DDBC;
+    /* tertiary color */
+    --color3: #003835;
+    /* semi-transparent color */
+    --color33: rgb(9, 34, 33, 0.7);
+    /* dark background color */
+    --color333: #092221;
+    /* light background color */
+    --color4: #f8f7f4;
+    /* off-white background color */
+    --color5: #ebecf0;
+    /* color for description font */
+    --desc-font-color: #FFFFFF;
+    /* Box Heights */
+    /* height of top navigation bar */
+    --top-nav-height: 70px;
+    /* Fonts */
+    /* font size for top navigation */
+    --top-nav-font-size: 16px;
+}
+
+
+/* Customize scrollbar appearance */
+
+body::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+body::-webkit-scrollbar-button:start:decrement,
+body::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 0;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background-color: #ffffff;
+    opacity: 0.2;
+    display: none;
+}
+
+body::-webkit-scrollbar-thumb:vertical {
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+/* Set common properties for body */
+
+body {
+    /* set height to 100% of viewport */
+    height: 100%;
+    /* remove margin from all sides */
+    margin: 0;
+    /* set background color */
+    background-color: var(--color3);
+    /* enable vertical scrolling */
+    overflow-y: auto;
+    /* ensure scrollbar does not overlap content */
+    scrollbar-gutter: stable;
+    /* enable horizontal and vertical scrolling */
+    overflow: overlay;
+}
+
+nav.top {
+    font-size: var(--top-nav-font-size);
+    top: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    background: var(--color33);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    height: var(--top-nav-height);
+    align-items: center;
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+    z-index: 5;
+    justify-content: space-between;
+    box-shadow: 0 5px 10px rgb(0, 0, 0, 0.5);
+}
+
+
+/* Styling for day and date */
+
+#day,
+#date {
+    font-family: "Roboto Mono";
+    font-size: 17px;
+    color: aliceblue;
+}
+
+
+/* Styling for the menu button */
+
+#menu {
+    position: absolute;
+    z-index: 4;
+    bottom: -70px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--color3);
+    transition-duration: 0.5s;
+    border-radius: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 30px;
+}
+
+
+/* Styling for menu button on hover */
+
+#menu:hover {
+    cursor: pointer;
+}
+
+
+/* Styling for menu button hr */
+
+#menu hr {
+    transform-origin: center center;
+    width: 50%;
+    background-color: var(--color4);
+    border: 2px solid var(--color4);
+    margin: 0;
+    transition-duration: 0.5s;
+    border-radius: 10%;
+}
+
+
+/* Adds width transition */
+
+.addwidth {
+    width: 30vw;
+}
+
+
+/* Styles for navigation menu */
+
+#navigationmenu {
+    position: absolute;
+    right: -30vw;
+    top: 70px;
+    height: calc(100vh - 60px);
+    z-index: 3;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    transition-duration: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Styles for navigation menu list items */
+
+#navigationmenu li {
+    position: relative;
+    font-family: "Poiret One";
+    font-size: 35px;
+    width: 100%;
+    transition-duration: 0.5s;
+    font-weight: bold;
+    flex-grow: 1;
+    backdrop-filter: blur(100px);
+}
+
+
+/* Styles for navigation menu links */
+
+#navigationmenu a {
+    background: rgb(9, 34, 33, 0.95);
+    width: 100%;
+    height: 100%;
+    float: left;
+    text-decoration: none;
+    color: var(--color4);
+    padding-left: 50px;
+    animation: slide-in 0.5s ease-in-out both;
+    display: flex;
+    align-items: center;
+    transition-property: box-shadow, width, background, transform, border, ;
+    transition-duration: 0.2s;
+    border: 0px solid rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+}
+
+
+/* Styles for hovered navigation menu items */
+
+#navigationmenu li:hover {
+    transform: translateX(-15px);
+    width: calc(100% + 15px);
+}
+
+
+/* Styles for hovered navigation menu links */
+
+#navigationmenu a:hover {
+    box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: var(--color3);
+    color: var(--color4);
+}
+
+
+/* Keyframe animation for sliding in navigation menu links */
+
+@keyframes slide-in {
+    0% {
+        opacity: 0.5;
+        transform: translateX(30vw);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#fade {
+    /* Set the duration of the transition effect */
+    transition-duration: 0.5s;
+}
+
+
+/* The following CSS styles are for the website's navigation logo */
+
+.Nav-Logo {
+    /* Sets the font size to 48 pixels */
+    font-size: 48px;
+    /* Sets the width to fit the content of the logo */
+    width: fit-content;
+    /* Sets the font style to normal */
+    font-style: normal;
+    /* Sets the font family to "Aboreto" */
+    font-family: "Aboreto";
+    /* Sets the color to a variable named "--color4" */
+    color: var(--color4);
+    /* Removes text decoration */
+    text-decoration: none;
+}
+
+
+/* The following CSS styles are for the website's greeting box */
+
+.Greet-box {
+    /* Sets the aspect ratio to 22:9 */
+    aspect-ratio: 22 / 9;
+    /* Sets the position to relative */
+    position: relative;
+    /* Sets the padding top to 0 */
+    padding-top: 0;
+    /* Sets the width to 100% of the viewport width */
+    width: 100vw;
+    /* Sets the display property to flex */
+    display: flex;
+    /* Sets the minimum height to 50% of the viewport width */
+    min-height: 50vw;
+    /* Sets the maximum height to 1000 pixels */
+    max-height: 1000px;
+    /* Sets the background color to a variable named "--display-items-inital-color" */
+    background: var(--display-items-inital-color);
+}
+
+
+/* Styling for a container element for a greeting box */
+
+.Greet-box-text-container {
+    /* Add some space between the top of the container and its contents */
+    padding-top: 20px;
+    /* Add some space to the left of the container */
+    padding-left: 40px;
+    /* Set the width of the container to 65% of its parent element */
+    width: 65%;
+    /* Set the height of the container to 30% of its parent element */
+    height: 30%;
+    /* Use flexbox to center the container vertically and horizontally */
+    display: flex;
+    /* Position the container absolutely so that it is not affected by other elements on the page */
+    position: absolute;
+    /* Set the distance from the top of the viewport to the top edge of the container to 4% of the viewport width */
+    top: 4vw;
+    /* Set the distance from the left edge of the viewport to the left edge of the container to 0 */
+    left: 0;
+    /* Add a blur effect to the background of the container */
+    backdrop-filter: blur(10px);
+    /* Set the background color of the container to a semi-transparent dark color */
+    background: rgba(22, 26, 33, 0.408);
+    /* Use flexbox to arrange the contents of the container in a column */
+    flex-direction: column;
+}
+
+
+/* Styling for the h1 element inside the greeting box container */
+
+.Greet-box-text-container h1 {
+    /* Set the color of the text to a custom variable */
+    color: var(--color4);
+    /* Set the font family to "Poiret One" */
+    font-family: "Poiret One";
+    /* Set the font weight to normal */
+    font-weight: normal;
+    /* Set the font size to 3.5% of the viewport width */
+    font-size: 3.5vw;
+    /* Add some space between the bottom of the h1 element and the following element */
+    margin-bottom: 1vw;
+    /* Add some space between the top of the h1 element and the previous element */
+    margin-top: 2vw;
+    /* Add some space to the right of the h1 element */
+    padding-right: 40px;
+}
+
+
+/* Styling for the placeholder text inside the input element of the greeting box */
+
+.Greet-box input::placeholder {
+    /* Set the color of the placeholder text to a custom variable */
+    color: var(--color4);
+}
+
+
+/* Styling for the input element inside the greeting box */
+
+.Greet-box input {
+    /* Set the color of the text to a custom variable */
+    color: var(--color4);
+    /* Set the font family to "Poiret One" */
+    font-family: "Poiret One";
+    /* Set the font weight to normal */
+    font-weight: normal;
+    /* Set the font size to 3.5% of the viewport width */
+    font-size: 3.5vw;
+    /* Set the background color of the input element to transparent */
+    background: transparent;
+    /* Set the font size to 3.5% of the viewport width */
+    font-size: 3.5vw;
+    /* Remove any padding from the input element */
+    padding: 0;
+    /* Remove any border from the input element */
+    border: none;
+    /* Position the input element absolutely, offset from the top and left of its parent element */
+    position: absolute;
+    /* Set the distance from the top of the input element to the bottom of the h1 element to 42px + 4% of the viewport width */
+    top: calc(42px + 4vw);
+    /* Set the distance from the left of the input element to the left edge of its parent element */
+    left: 40px;
+    /* Set the z-index of the input element to 4, so that it appears above other elements on the page */
+    z-index: 4;
+}
+
+
+/* Styling for the input element when it is in focus */
+
+.Greet-box input:focus {
+    /* Set the color of the text to a custom variable */
+    color: var(--color4);
+    /* Set the font family to "Poiret One" */
+    font-family: "Poiret One";
+    /* Set the font weight to normal */
+    font-weight: normal;
+    /* Set the font size to 3.5% of the viewport width */
+    font-size: 3.5vw;
+    /* Set the background color of the input element to transparent */
+    background: transparent;
+    /* Set the font size to 3.5% of the viewport width */
+    font-size: 3.5vw;
+}
+
+
+/* Styling for the h3 element inside the greeting box container */
+
+.Greet-box-text-container h3 {
+    /* Add some space between the top of the h3 element and the previous element */
+    margin-top: 0.5vw;
+    /* Set the width of the h3 element to 50% of its parent element */
+    width: 50%;
+    /* Set the font size of the h3 element to 1.3% of the viewport width */
+    font-size: 1.3vw;
+    /* Set the font family of the h3 element to "Aston Martin" */
+    font-family: "Aston Martin";
+    /* Set the font weight of the h3 element to normal */
+    font-weight: normal;
+    /* Set the color of the text to a custom variable */
+    color: var(--color4);
+}
+
+
+/* Styles for the image inside the Greet-box container */
+
+.Greet-box img {
+    /* Set the width to 100% and height to auto to ensure the image scales properly */
+    width: 100%;
+    height: auto;
+    /* Position the image absolutely to allow it to be placed on top of other elements */
+    position: absolute;
+    /* Move the image up by 15vw units so that it's partially hidden behind the text container */
+    top: -15vw;
+    /* Set a higher z-index than the text container to ensure it is displayed above it */
+    z-index: 1;
+}
+
+
+/* Styles for the container that holds the image */
+
+.Greet-box-image-container {
+    /* Position the container absolutely to allow it to be placed on top of other elements */
+    position: absolute;
+    /* Align the container to the top of the parent element */
+    top: 0;
+    /* Set the display property to flex to allow centering of child elements */
+    display: flex;
+    /* Set the width to 100% to ensure the container fills the entire parent element */
+    width: 100%;
+    /* Center the child elements horizontally */
+    justify-content: center;
+    /* Ensure the image inside the container scales properly to fill the container */
+    object-fit: cover;
+    /* Set the height to 100% to ensure the container fills the entire parent element */
+    height: 100%;
+    /* Set a lower z-index than the image to ensure it is displayed behind it */
+    z-index: 0;
+}
+
+
+/* Styles for the image inside the Greet-box-image-container */
+
+.Greet-box-image-container img {
+    /* Set the width to 100% and height to auto to ensure the image scales properly */
+    width: 100%;
+    height: auto;
+    /* Align the bottom of the image to the bottom of the container */
+    bottom: 0;
+    /* Add a box shadow to the image to create a visual separation from the text container */
+    box-shadow: 0 10px 300px rgb(0 0 0 / 80%);
+}
+
+#topics {
+    /* set the width of the container to 100% of its parent element */
+    width: 100%;
+    /* set the height of the container to adjust automatically based on its content */
+    height: auto;
+    /* use flexbox display to position the child elements */
+    display: flex;
+    /* distribute the child elements evenly along the main axis with space between them */
+    justify-content: space-between;
+    /* set the padding of the container to 0 on top and bottom, and 10% on left and right */
+    padding: 0 10% 0 10%;
+    /* include the padding in the total width of the container */
+    box-sizing: border-box;
+    /* set the gap between the rows of child elements to 10px */
+    row-gap: 10px;
+}
+
+.topic {
+    /* Set margin top and bottom of the topic */
+    margin-top: 50px;
+    margin-bottom: 50px;
+    /* Set aspect ratio to 7/10, width to 1/3 of the parent container and display as flex */
+    position: relative;
+    aspect-ratio: 7/10;
+    width: calc(95%/3);
+    display: flex;
+    /* Set object-fit to cover, overflow to hidden and box-sizing to border-box */
+    object-fit: cover;
+    overflow: hidden;
+    box-sizing: border-box;
+    /* Set transition duration to 0.5s, opacity to 0 and scale to 0.9 */
+    transition-duration: 0.5s;
+    opacity: 0;
+    transform: scale(0.9);
+    /* Set text decoration to none */
+    text-decoration: none;
+}
+
+
+/* On hover, increase scale to 1.05, set z-index to 2, add border and box-shadow */
+
+.topic:hover {
+    transform: scale(1.05);
+    z-index: 2;
+    border: 1px solid var(--color4);
+    box-shadow: 0 10px 30px black;
+}
+
+
+/* Set height of the image to 100% */
+
+.topic img {
+    height: 100%;
+}
+
+.topic-button {
+    /* Set background to semi-transparent gray and position to absolute */
+    background: rgb(166, 166, 166, 0.3);
+    position: absolute;
+    /* Set width to 80%, padding top and bottom to 20px, text align to center, align self to center and margin to 10% */
+    width: 80%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    align-self: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* Set box-sizing to border-box, color to var(--color4), font size to 30px, font family to Aboreto, font weight to bolder and backdrop-filter to blur */
+    box-sizing: border-box;
+    color: var(--color4);
+    font-size: 30px;
+    font-family: "Aboreto";
+    font-weight: bolder;
+    backdrop-filter: blur(10px);
+    /* Set transition duration to 0.5s and text decoration to none */
+    transition-duration: 0.5s;
+    text-decoration: none;
+}
+
+
+/* On hover, add border to the topic button */
+
+.topic:hover>.topic-button {
+    border: 1px solid var(--color4);
+}
+
+
+/* On hover, increase font size and set background color */
+
+.topic-button:hover {
+    font-size: 32px;
+    background: #061c1b;
+    cursor: pointer;
+}
+
+
+/* styles for the diaries container */
+
+.diaries {
+    /* set the width of the container to 100vw (viewport width) */
+    width: 100vw;
+    /* set the height of the container to adjust automatically based on its content */
+    height: auto;
+    /* use flexbox display with a column direction to stack the child elements vertically */
+    display: flex;
+    flex-direction: column;
+    /* distribute the child elements evenly along the cross-axis */
+    justify-content: space-evenly;
+    align-items: center;
+    /* set the gap between rows and columns of child elements */
+    row-gap: 60px;
+    column-gap: 60px;
+    /* wrap the child elements to a new line when they overflow the container */
+    flex-flow: wrap;
+    /* set the stacking order of the container */
+    z-index: 1;
+    /* include the padding and border in the total width and height of the container */
+    box-sizing: border-box;
+    /* set a margin at the bottom of the container */
+    margin-bottom: 150px;
+}
+
+
+/* styles for the diary item boxes */
+
+.diaries-item-box {
+    /* set the width of the box to 80% of its parent element, with a maximum width of 1500px */
+    width: 80%;
+    max-width: 1500px;
+    /* set the height of the box to adjust automatically based on its content */
+    height: auto;
+    /* set the background color with some transparency */
+    background: rgb(166, 166, 166, 0.3);
+    /* apply a backdrop filter effect to blur the content behind the box */
+    backdrop-filter: blur(10px);
+    /* use flexbox display with a row direction to arrange the child elements horizontally */
+    display: flex;
+    flex-direction: row;
+    /* wrap the child elements to a new line when they overflow the box */
+    flex-wrap: wrap;
+    /* distribute the child elements evenly along the main axis */
+    justify-content: space-evenly;
+    /* apply a transition effect when the box is hovered */
+    transition-duration: 0.5s;
+    transition-delay: 0;
+    /* set the initial opacity of the box to 0 */
+    opacity: 0;
+}
+
+
+/* styles for the diary item boxes when hovered */
+
+.diaries-item-box:hover {
+    /* apply a box shadow effect to the box */
+    box-shadow: 0 20px 30px rgb(0 0 0 / 100%);
+    /* apply a scale transformation to the box to make it slightly larger */
+    transform: scale(1.005);
+}
+
+
+/* styles for the diary item image container */
+
+.diaries-item-image {
+    /* set the width of the container to 40% of its parent element */
+    width: 40%;
+    /* set the height of the container to 90% of the viewport height */
+    height: 90vh;
+    /* set a minimum width for the container */
+    min-width: 300px;
+    /* set the height of the container to adjust automatically based on its content */
+    height: 100%;
+    /* use flexbox display to center the child elements horizontally and vertically */
+    display: flex;
+}
+
+
+/* styles for the diary item image */
+
+.diaries-item-image img {
+    /* set the position of the image to the top of its container */
+    top: 0;
+    /* set the height of the image to 90% of the viewport height */
+    height: 90vh;
+    /* set the maximum height of the image to 900px */
+    max-height: 900px;
+    /* set the width of the image to 100% of its container */
+    width: 100%;
+    /* set the object-fit property to cover to scale the image while maintaining its aspect ratio */
+    object-fit: cover;
+}
+
+
+/* styles for the diary item text container */
+
+.diaries-item-text {
+    /* set the position of the container to relative to allow absolute positioning of child elements */
+    position: relative;
+    /* set the width of the container to 60% of its parent element */
+    width: 60%;
+    /* set the height of the container to adjust automatically based on its content */
+    height: auto;
+    /* use flexbox display with a column direction to stack the child elements vertically */
+    display: flex;
+    flex-direction: column;
+    /* set the text color to a custom CSS variable */
+    color: var(--color4);
+    /* include the padding and border in the total width and height of the container */
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-right: 40px;
+    /* wrap the child elements to a new line when they overflow the container */
+    flex-wrap: wrap;
+    /* set a minimum width for the container */
+    min-width: 400px;
+}
+
+
+/* Styles for diary entry title */
+
+.diaries-item-text h2 {
+    display: flex;
+    width: fit-content;
+    font-size: 35px;
+    padding-bottom: 10px;
+    font-family: "Poiret One";
+    border-bottom: 1px solid var(--color4);
+}
+
+
+/* Styles for diary entry text */
+
+.diaries-item-text p {
+    display: flex;
+    padding-top: 20px;
+    word-wrap: break-word;
+    font-size: 15px;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    font-family: "Aston Martin";
+    font-weight: normal;
+    height: auto;
+    width: 100%;
+    text-align: justify;
+}
+
+
+/* Styles for diary entry date container */
+
+.diary-date {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Styles for diary entry date box */
+
+.diary-date div {
+    background: #092221;
+    display: flex;
+    width: fit-content;
+    height: 80%;
+    font-size: 15px;
+    font-family: "Roboto Mono";
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/* Style for the diary bottom box */
+
+.diary-bottom-box {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    color: var(--color333);
+    font-family: "Poiret One";
+    font-weight: bolder;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+/* Style for the diary bottom box links */
+
+.diary-bottom-box a,
+.diary-bottom-box div {
+    width: fit-content;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+
+/* Style for the diary bottom box div */
+
+.diary-bottom-box div {
+    background: var(--color4);
+    padding-right: 40px;
+}
+
+
+/* Style for the diary bottom box links when hovered */
+
+.diary-bottom-box a {
+    justify-content: center;
+    border: 2px solid var(--color4);
+    color: var(--color4);
+    transition-duration: 0.5s;
+}
+
+
+/* Style for the diary bottom box when the item box is hovered */
+
+.diaries-item-box:hover .diaries-item-text .diary-bottom-box a {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+
+/* Style for visited diary bottom box links */
+
+.diary-bottom-box a:visited {
+    text-decoration: none;
+}
+
+
+/* Style for hovered diary bottom box links */
+
+.diary-bottom-box a:hover {
+    background: var(--color4);
+    color: var(--color333);
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 30px;
+}
+
+
+/* Style for all section headers */
+
+h1.all-section-headers {
+    width: 80%;
+    box-sizing: border-box;
+    font-size: 80px;
+    color: var(--color5);
+    font-family: "Aboreto";
+    text-align: center;
+    border-radius: 20px;
+    background: var(--color33);
+    padding: 20px 60px 20px 60px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 40%);
+    margin-bottom: 20px;
+}
+
+
+/* Style for all section descriptions */
+
+h3.all-section-desc {
+    font-size: 20px;
+    color: #A6A6A6;
+    font-family: "Aston Martin";
+    font-weight: normal;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+/* This style defines the display box for the content pieces */
+
+.display-pieces-box {
+    width: 100%;
+    height: auto;
+    margin-bottom: 150px;
+    box-sizing: border-box;
+}
+
+
+/* This style defines the header box for the content pieces */
+
+.display-pieces-header-box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+
+/* This style defines the column container for the content pieces */
+
+.display-pieces-containers-col {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 20px 10vw 20px 10vw;
+    row-gap: 80px;
+    column-gap: 80px;
+}
+
+
+/* This style defines the container for each content piece */
+
+.display-pieces-containers-items {
+    position: relative;
+    background: var(--color33);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: 350px;
+    min-width: 300px;
+    flex-wrap: wrap;
+    width: 30vw;
+    height: 70vh;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    border-radius: 20px;
+    transition-duration: 0.6s;
+    color: var(--color4);
+}
+
+
+/* This style defines the hover effect for each content piece */
+
+.display-pieces-containers-items:hover {
+    background: #A6A6A6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* This style defines the hover effect for the title of each content piece */
+
+.display-pieces-containers-items:hover h2 {
+    color: #003835;
+    border-bottom: 1px solid #003835;
+}
+
+
+/* This style defines the hover effect for the subtitle of each content piece */
+
+.display-pieces-containers-items:hover h4 {
+    color: #003835;
+}
+
+
+/* This style defines the container for the image of each content piece */
+
+.display-pieces-containers-items-img {
+    position: relative;
+    height: 50%;
+    width: 90%;
+    margin: 5%;
+    top: 0;
+    border-radius: 10px 10px 0 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    object-fit: contain;
+}
+
+
+/* This style defines the image of each content piece */
+
+.display-pieces-containers-items-img img {
+    height: 90%;
+    width: 80%;
+    object-fit: contain;
+}
+
+
+/* This style defines the container for the text of each content piece */
+
+.display-pieces-containers-items-text-container {
+    width: 100%;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+    align-items: center;
+}
+
+
+/* Styling for h2 elements within display-pieces-containers-items class */
+
+.display-pieces-containers-items h2 {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    text-align: center;
+    font-family: "Aboreto";
+    font-weight: bold;
+    font-size: 22px;
+    width: 85%;
+    margin: 0;
+    padding-bottom: 20px;
+    transition-duration: 0.5s;
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--color5);
+}
+
+
+/* Styling for h4 elements within display-pieces-containers-items class */
+
+.display-pieces-containers-items h4 {
+    display: flex;
+    align-items: top;
+    margin-top: 20px;
+    justify-content: center;
+    text-align: center;
+    font-family: "Aston Martin";
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--color5);
+    transition-duration: 0.5s;
+    font-weight: normal;
+}
+
+
+/* Set opacity to 1 for the rainbow pseudo-elements on hover */
+
+.display-pieces-containers-items:hover .rainbow::after,
+.display-pieces-containers-items:hover .rainbow::before {
+    opacity: 1;
+}
+
+
+/* Change the color and add bold font-weight on hover */
+
+.display-pieces-containers-items:hover a {
+    color: var(--color3);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 50px 0 50px;
+}
+
+
+/* Remove underline for visited links */
+
+.display-pieces-containers-items a:visited {
+    text-decoration: none;
+}
+
+
+/* Style the link */
+
+.display-pieces-containers-items a {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: fit-content;
+    height: 50px;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poiret One";
+    transition-duration: 0.5s;
+    text-decoration: none;
+    color: var(--color4);
+}
+
+
+/* Keyframes for rotating gradient background */
+
+@keyframes rotate {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+
+/* Rainbow link hover cursor */
+
+.rainbow:hover::after {
+    cursor: pointer;
+    background: black;
+    transition-duration: 0.2s;
+}
+
+a.rainbow:hover {
+    color: var(--color4);
+    font-weight: bolder;
+    transform: scale(1.03);
+    box-shadow: 0 3px 10px rgb(255 255 255 / 100%);
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    transition-duration: 0.2s;
+}
+
+
+/* Rainbow container */
+
+.rainbow {
+    z-index: 1;
+    font-size: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+
+/* Gradient before rainbow container */
+
+.rainbow::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    width: 200%;
+    height: 300%;
+    background-color: var(--color333);
+    background-repeat: no-repeat;
+    background-size: 300%;
+    background-position: 0 100%;
+    background-image: linear-gradient(#061c1b, #003835, #35d0c8, #63e8e2);
+    animation: rotate 4s linear infinite;
+    transition-duration: 0.5s;
+    opacity: 0;
+}
+
+
+/* Gradient after rainbow container */
+
+.rainbow::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 4px;
+    top: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+    border-radius: 5px;
+    background: #A6A6A6;
+    transition-duration: 0.5s;
+    opacity: 0;
+}
+
+
+/* Container for the greeting section */
+
+.greeting-container {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    background-position: center;
+}
+
+
+/* Container for the greeting display */
+
+.greeting-container-display {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(80px);
+    display: flex;
+    object-fit: contain;
+    justify-content: center;
+    box-shadow: 0 2px 30px rgb(0, 0, 0, 0.5);
+}
+
+
+/* Container for date display */
+
+.date-container {
+    height: 40px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+
+/* Individual date section */
+
+.date-container div {
+    width: 20%;
+    box-sizing: border-box;
+    height: auto;
+    position: relative;
+}
+
+
+/* Date Heading */
+
+.date-container div h2 {
+    margin: 0;
+    min-width: 150px;
+    font-size: 15px;
+    font-family: monospace;
+    font-weight: normal;
+    font-family: "Roboto Mono";
+    text-align: center;
+    color: var(--color4);
+    font-weight: normal;
+    background: var(--color333);
+    width: fit-content;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+
+/* Content of Diary Box */
+
+.diary-content-box {
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    padding-left: 20%;
+    padding-right: 20%;
+    overflow: hidden;
+    color: var(--color4);
+    font-family: "Aston Martin";
+}
+
+
+/* Content of Diary Box heading */
+
+.diary-content-box h1 {
+    font-family: "Aboreto";
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 20px 0 20px 0;
+    margin: 0 0 100px 0;
+    border-bottom: 1px solid var(--color4);
+}
+
+
+/* Content of Diary Box paragraph */
+
+.diary-content-box p {
+    font-weight: 100;
+    text-indent: 10%;
+    margin-bottom: 50px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
+}
+
+
+/* Content of Diary Box button */
+
+.diary-button-box {
+    width: 100%;
+    box-sizing: border-box;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Button to read other blogs */
+
+.diary-read-other-button {
+    position: relative;
+    height: 40px;
+    width: 200px;
+    background: rgb(166, 166, 166, 0.2);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.5s;
+    border: 1px solid aliceblue;
+}
+
+
+/* Button to read other blogs link */
+
+.diary-read-other-button a {
+    text-align: center;
+    width: 100%;
+    color: aliceblue;
+    font-family: "Aston Martin";
+    transition: 0.5s;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+}
+
+
+/* Button to read other blogs decoration */
+
+.diary-read-other-button-decor {
+    position: absolute;
+    float: right;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--color333);
+    transition: 0.5s;
+}
+
+
+/* Increase button width when hover */
+
+.diary-read-other-button:hover>.diary-read-other-button-decor {
+    width: 100%;
+}
+
+
+/* Change link color when button is hovered */
+
+.diary-read-other-button:hover>a {
+    background: var(--color5);
+    color: var(--color333);
+}
+
+
+/* Changing button color when hovered */
+
+.diary-read-other-button:hover {
+    box-shadow: 0 5px 30px rgb(0 0 0 / 80%);
+    cursor: pointer;
+}
+
+
+/* Box for outfit */
+
+.outfit-box {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    color: var(--color4);
+}
+
+
+/* Box for outfit content */
+
+.outfit-box-content-box {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: auto;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 200px;
+}
+
+
+/* Box for outfit content images */
+
+.outfit-box-content-box-img-box {
+    width: 35%;
+    min-width: 250px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
+/* Box to the right */
+
+.outfit-box-content-box-details-box-right {
+    width: 65%;
+    min-width: 400px;
+    height: 90%;
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Box to the left */
+
+.outfit-box-content-box-details-box-left {
+    width: 65%;
+    min-width: 400px;
+    height: 90%;
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Outfit box decoration */
+
+.outfit-box-content-box-img-box-decor {
+    height: 250px;
+    width: 250px;
+    border-radius: 120px;
+    background: var(--color333);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* outfit heading styles */
+
+h1.outfit-box-content-box-text-specifics {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    height: auto;
+    text-align: start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: "Aston Martin";
+    font-size: 30px;
+    color: var(--color4);
+}
+
+
+/* outift image styles */
+
+.outfit-box-content-box-img-box-decor img {
+    width: 140%;
+}
+
+
+/* Price tag box */
+
+.outfit-price-tag-box {
+    width: 150px;
+    background: var(--color1);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--color4);
+}
+
+
+/* price tag heading styles */
+
+.outfit-price-tag-box h4 {
+    font-size: 20px;
+    color: aliceblue;
+    font-family: "Aston Martin";
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+/* BOutfit details style */
+
+p.outfit-details {
+    font-family: "Aston Martin";
+    letter-spacing: 0.5px;
+    margin-top: 50px;
+    width: 80%;
+}
+
+
+/* Box for explore section */
+
+.explore-section {
+    width: 100%;
+    height: auto;
+    padding: 0 10% 0 10%;
+    display: flex;
+    row-gap: 30px;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+
+/* Box for explore section content */
+
+.explore-content-box {
+    min-width: 300px;
+    width: 32%;
+    display: flex;
+    aspect-ratio: 16/9;
+    background: rgb(166, 166, 166, 0.3);
+    height: auto;
+    position: relative;
+}
+
+
+/* Box for explore section content image */
+
+.explore-content-box-image {
+    width: 40%;
+    height: 100%;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+/* Box for explore section content on the right */
+
+.explore-content-box-right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+
+/* Style for content title */
+
+.explore-content-box-right-title {
+    height: 80%;
+    width: 100%;
+    padding: 20px 10px 0 20px;
+    box-sizing: border-box;
+    color: var(--color4);
+    font-family: "Aboreto";
+}
+
+
+/* Style for explore section content title heading */
+
+.explore-content-box-right-title h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 22px;
+}
+
+
+/* Style for explore section content button */
+
+.explore-content-box-button {
+    position: absolute;
+    width: 60%;
+    height: 20%;
+    background: rgb(6, 28, 27, 0.5);
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.35s;
+    font-family: "Aboreto";
+    color: var(--color4);
+    backdrop-filter: blur(10px);
+    text-decoration: none;
+}
+
+
+/* Styling when button is hovered */
+
+.explore-content-box-button:hover {
+    width: 100%;
+    cursor: pointer;
+    background: rgb(6, 28, 27, 0.8);
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+
+/* Box for tips section */
+
+.tips-section {
+    width: 100%;
+    padding: 0 10% 0 10%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    row-gap: 50px;
+}
+
+
+/* Box for tips content */
+
+.tips-content-box {
+    width: 45%;
+    height: 87vh;
+    border: 2px solid var(--color4);
+    border-radius: 10px;
+    position: relative;
+    min-width: 350px;
+}
+
+
+/* Box for tips content image */
+
+.tips-content-box-image {
+    width: 100%;
+    height: 100%;
+    background: var(--color1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+/* Styling tips image */
+
+.tips-content-box-image img {
+    height: 100%;
+}
+
+
+/* Changing tips content size when hovered */
+
+.tips-content-box:hover .tips-content-box-content {
+    height: 70%;
+}
+
+
+/* Changing tips paragraph size when hovered */
+
+.tips-content-box:hover .tips-content-box-content p {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+
+/* Changing tips link size when hovered */
+
+.tips-content-box:hover .tips-content-box-content a {
+    padding-left: 80px;
+    padding-right: 80px;
+    cursor: pointer;
+}
+
+
+/* Changing tips link color when hovered */
+
+.tips-content-box-content a:hover {
+    background: var(--color4);
+    color: black;
+}
+
+
+/* box for content inside tips content */
+
+.tips-content-box-content {
+    transition-duration: 0.5s;
+    width: 100%;
+    height: 35%;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 10px 10px;
+    backdrop-filter: blur(10px);
+    background: rgb(6, 28, 27, 0.5);
+    color: var(--color4);
+    font-family: "Aston Martin";
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+}
+
+
+/* heading style for content inside tips content */
+
+.tips-content-box-content h2 {
+    margin: 0;
+    padding: 0;
+    font-family: "Aboreto";
+    margin-top: 20px;
+}
+
+
+/* Paragraph style for content inside tips content */
+
+.tips-content-box-content p {
+    height: 0%;
+    overflow: hidden;
+    opacity: 0;
+    width: 0;
+    transition-duration: 0.5s;
+    text-align: justify;
+}
+
+
+/* Div style for content inside tips content */
+
+.tips-content-box-content div {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    height: fit-content;
+    padding: 5px 30px 5px 30px;
+    background: var(--color333);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto Mono";
+}
+
+
+/* Link style for content inside tips content */
+
+.tips-content-box-content a {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    height: fit-content;
+    padding: 5px 30px 5px 30px;
+    border: 2px solid var(--color4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.5s;
+    font-family: "Aboreto";
+    text-decoration: none;
+}
+
+
+/* link style for visited content inside tips content */
+
+.tips-content-box-content a:visited {
+    color: var(--color4);
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+
+/* link style for visited content inside tips content when hovered */
+
+.tips-content-box-content a:visited:hover {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* link style for visited content inside tips content when hovered */
+
+.diary-related-posts-box {
+    width: 100%;
+    height: auto;
+    margin-bottom: 200px;
+}
+
+
+/* Box for recommended section */
+
+.recommended-box {
+    width: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    height: 462px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+
+/* Box for recommended section contents */
+
+.recommended-box-content-container {
+    width: 630px;
+    height: 100%;
+    position: relative;
+    scroll-snap-align: center;
+    scroll-behavior: smooth;
+    scroll-snap-stop: always;
+}
+
+
+/* Box for recommended section contents button */
+
+.recommended-box-content-container-button-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    height: 40px;
+    width: 110px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--color4);
+}
+
+
+/* Box for recommended section contents button link */
+
+.recommended-box-content-container-button-container a {
+    text-align: center;
+    width: 100%;
+    color: aliceblue;
+    font-family: "Aston Martin";
+    transition: 0.5s;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+/* style for recommended section contents button when hovered */
+
+.recommended-box-content-container-button-container:hover {
+    background: rgba(255, 255, 255, 0.7);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* style for recommended section contents link button when hovered */
+
+.recommended-box-content-container-button-container:hover>a {
+    color: black;
+}
+
+
+/* style for recommended section contents text */
+
+.recommended-box-content-container-text {
+    max-width: 500px;
+    position: absolute;
+    top: 40px;
+    left: 50px;
+}
+
+
+/* style for recommended section contents heading */
+
+.recommended-box-content-container-text h2 {
+    margin-top: 0;
+    font-family: "Aboreto";
+    color: aliceblue;
+    font-size: 50px;
+    backdrop-filter: blur(2px);
+    border-radius: 100px;
+    margin-bottom: 20px;
+}
+
+
+/* style for recommended section contents paragraph */
+
+.recommended-box-content-container-text p {
+    font-family: "Roboto Mono";
+    color: aliceblue;
+    backdrop-filter: blur(10px);
+    display: flex;
+    width: 180px;
+    text-align: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+/* style for recommended section contents image */
+
+.recommended-box-content-container-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* recommended custom scrollbar */
+
+.recommended-box::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+
+/* recommended custom scrollbar track piece*/
+
+.recommended-box::-webkit-scrollbar-track-piece {
+    background-color: var(--secondary-font-color);
+    opacity: 0.2;
+    display: none;
+}
+
+
+/* recommended custom scrollbar thumb horizontal*/
+
+.recommended-box::-webkit-scrollbar-thumb:horizontal {
+    height: 50px;
+    background-color: aliceblue;
+}
+
+
+/* Box for about me section */
+
+.aboutpage-aboutme-section {
+    width: 100%;
+    height: auto;
+    padding: 0 10% 0 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+
+/* Box for about me section main content */
+
+.aboutpage-aboutme-main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* Box for about me section main content image */
+
+.aboutpage-aboutme-main-image {
+    width: 35%;
+    aspect-ratio: 3/4;
+    display: flex;
+    object-position: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+/* Style for about me section main content image */
+
+.aboutpage-aboutme-main-image img {
+    height: 100%;
+}
+
+
+/* Style for about me section main content text */
+
+.aboutpage-aboutme-main-text {
+    width: 65%;
+    height: auto;
+    background: rgb(6, 28, 27, 0.5);
+    padding: 20px 20px 20px 20px;
+    color: var(--color4);
+    font-family: "Aston Martin";
+    font-weight: 100;
+    text-align: justify;
+    letter-spacing: 0.8px;
+}
+
+
+/* Style for about me section main content text paragraph and bold */
+
+.aboutpage-aboutme-main-text p b {
+    font-size: 20px;
+    font-family: "Aboreto";
+    color: var(--color1);
+}
+
+
+/* Box for about me passion section */
+
+.aboutpage-passion {
+    width: 100%;
+    height: auto;
+    padding: 0 10% 0 10%;
+    box-sizing: border-box;
+    font-family: "Aston Martin";
+    color: var(--color4);
+    margin-bottom: 200px;
+}
+
+
+/* Style for about me passion paragraph */
+
+.aboutpage-passion p {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 0.6px;
+    margin-bottom: 40px;
+    font-weight: 100;
+}
+
+
+/* Box for icon content */
+
+.icons-content {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+    column-gap: 20px;
+    row-gap: 50px;
+    align-self: center;
+    justify-self: center;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+}
+
+
+/* Box for icon content display */
+
+.icons-display {
+    width: 200px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* Box for icon content display image */
+
+.icons-display-image {
+    width: 65%;
+    aspect-ratio: 1/1;
+    height: auto;
+    border-radius: 100%;
+    object-fit: contain;
+    background: var(--color1);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
+}
+
+
+/* Style for icon content display image */
+
+.icons-display-image img {
+    object-fit: contain;
+    width: 100%;
+}
+
+
+/* Style for icon content display name */
+
+.icons-display-icon-name {
+    height: 35%;
+    width: 100%;
+    font-family: "Poiret One";
+    font-size: 20px;
+    color: var(--color4);
+    background: #061c1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px 10px 30px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    border-radius: 20px;
+    word-break: keep-all;
+    border: 1px solid var(--color4);
+}
+
+
+/* Style for icon content display name heading */
+
+.icons-display-icon-name h3 {
+    text-align: center;
+}
+
+
+/* Style for icon paragraph */
+
+p.icons-para {
+    width: 100%;
+    font-family: "Aston Martin";
+    font-weight: 100;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-indent: 80px;
+    box-sizing: border-box;
+    color: var(--color4);
+}
+
+
+/* Style for other icons */
+
+.other-icons {
+    width: 100%;
+    height: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+}
+
+
+/* Box for other icons */
+
+.other-icon-box {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 200px;
+}
+
+
+/* Style for other icons name */
+
+.other-icon-name {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(6, 28, 27);
+    backdrop-filter: blur(50px);
+    font-family: "Poiret One";
+    color: var(--color4);
+    display: flex;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    border-bottom: 1px solid var(--color4);
+    box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
+}
+
+
+/* Box for other image */
+
+.other-icon-image {
+    height: 500px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    object-fit: contain;
+}
+
+
+/* Size for other image */
+
+.other-icon-image img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 70%);
+}
+
+
+/* Style for other icons paragraph */
+
+.other-icon-box p {
+    margin-top: 50px;
+    width: 100%;
+    font-weight: 100;
+    color: var(--color4);
+    font-family: "Aston Martin";
+    text-indent: 80px;
+}
+
+
+/* Box for page footer */
+
+.footer {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color33);
+    color: var(--color5);
+}
+
+
+/* Style for page footer hr */
+
+.footer hr {
+    width: 97%;
+    border: 1px solid var(--color4);
+    background: var(--color5);
+}
+
+
+/* Box for page footer upper section */
+
+.foot1 {
+    padding-top: 10px;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Style for page footer upper section heading */
+
+.foot1 h1 {
+    font-size: 60px;
+    font-family: "Aboreto";
+    font-weight: normal;
+    text-align: left;
+    margin: 0;
+    width: fit-content;
+}
+
+
+/* Style for page footer upper section heading 2 */
+
+.foot1 h3 {
+    font-size: 25px;
+    font-family: "Poiret One";
+    font-weight: normal;
+    color: var(--color5);
+    margin: 0;
+    width: fit-content;
+    transition-duration: 0.1s;
+}
+
+
+/* Style for page footer upper section heading 2 when hovered */
+
+.foot1 h3:hover {
+    font-weight: bolder;
+    cursor: default;
+}
+
+
+/* Box for page footer below section */
+
+.foot2 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* box for page footer below section contacts */
+
+.foot2-contacts {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Aston Martin";
+    transition-property: transform, scale;
+    transition-duration: 1s;
+}
+
+
+/* style for page footer below section contacts link */
+
+.foot2-contacts a {
+    text-decoration: none;
+    color: var(--color4);
+    transition-duration: 0.3s;
+}
+
+
+/* style for page footer below section contacts visited link */
+
+.foot2-contacts a:visited {
+    text-decoration: none;
+    color: var(--color4);
+}
+
+
+/* animation for page footer below section contacts link when hovered */
+
+.foot2-contacts a:hover {
+    transform: scale(1.1);
+}
+
+
+/* Style for page footer below section contacts icon */
+
+.foot2-contacts-icon {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+/* Size for page footer below section contacts image */
+
+.foot2-contacts-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+
+/* importing font Roboto Mono */
+
+@font-face {
+    font-family: 'Roboto Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/L0x5DF4xlVMF-BfR8bXMIjhLq38.woff2) format('woff2');
+}
+
+
+/* importing font Aboreto */
+
+@font-face {
+    font-family: 'Aboreto';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/5DCXAKLhwDDQ4N8bpKPUAg.woff2) format('woff2');
+}
+
+
+/* importing font Poiret One */
+
+@font-face {
+    font-family: 'Poiret One';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/UqyVK80NJXN4zfRgbdfbo55cVw.woff2) format('woff2');
+}
+
+
+/* importing font Aston Martin */
+
+@font-face {
+    font-family: 'Aston Martin';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/AstonMartinSans_Rg.woff2) format('woff2');
+}
+
+
+/* importing font Aston Martin Bold */
+
+@font-face {
+    font-family: 'Aston Martin';
+    font-style: normal;
+    font-weight: 100;
+    src: url(../fonts/Comfortaa-VariableFont_wght.ttf);
+}
+
+
+/* Responsive */
+
+@media only screen and (max-width: 1050px) {
+    .aboutpage-aboutme-section {
+        padding: 0 5% 0 5%;
+    }
+    .aboutpage-aboutme-main-text p {
+        font-size: 14px;
+    }
+    .aboutpage-aboutme-main-text p b {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .diaries-item-box {
+        /* set the width of the box to 80% of its parent element, with a maximum width of 1500px */
+        width: 100%;
+        max-width: 1500px;
+        /* set the height of the box to adjust automatically based on its content */
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    h1.all-section-headers {
+        font-size: 60px;
+    }
+    .other-icon-name {
+        width: 200px;
+    }
+    .diaries-item-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .diaries-item-image {
+        /* set the width of the container to 40% of its parent element */
+        width: auto;
+        /* set the height of the container to 90% of the viewport height */
+        height: 60vh;
+        /* set a minimum width for the container */
+        min-width: 0;
+    }
+    .diaries-item-image img {
+        /* set the height of the image to 90% of the viewport height */
+        height: 60vh;
+        /* set the width of the image to 100% of its container */
+        width: auto
+    }
+    .diaries-item-text {
+        /* set the width of the container to 60% of its parent element */
+        width: 100%;
+        height: 650px;
+        padding-left: 40px;
+        padding-right: 40px;
+        /* wrap the child elements to a new line when they overflow the container */
+        flex-wrap: wrap;
+        /* set a minimum width for the container */
+        min-width: 0;
+    }
+    .diaries-item-text p {
+        display: flex;
+        padding-top: 20px;
+        word-wrap: break-word;
+        font-size: 15px;
+        padding-bottom: 10px;
+        letter-spacing: 1px;
+        font-family: "Aston Martin";
+        font-weight: normal;
+        height: auto;
+        width: 100%;
+        text-align: justify;
+    }
+    .tips-section {
+        justify-content: space-evenly;
+    }
+    .tips-content-box {
+        width: 55%;
+    }
+    .tips-content-box-content a {
+        padding: 5px 20px 5px 20px;
+    }
+    .tips-content-box:hover .tips-content-box-content a {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .tips-content-box-content h2 {
+        font-size: 18px;
+    }
+    .tips-content-box-content p {
+        font-size: 14px;
+    }
+    .aboutpage-aboutme-main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 20px;
+    }
+    .aboutpage-aboutme-main-text {
+        width: 80%;
+    }
+    .aboutpage-aboutme-main-image {
+        width: auto;
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .Nav-Logo {
+        font-size: 32px;
+    }
+    h1.all-section-headers {
+        font-size: 55px;
+    }
+    .other-icon-name {
+        width: 150px;
+        font-size: 25px;
+    }
+    .date-container {
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    .date-container div {
+        width: 150px;
+        padding-top: 10px;
+    }
+    .date-container div h2 {
+        width: 100%;
+    }
+    .diary-content-box {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .diary-content-box p {
+        font-size: 18px;
+    }
+    .outfit-box-content-box {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .topic-button {
+        font-size: 20px;
+    }
+    h1.all-section-headers {
+        width: 100%;
+        font-size: 50px;
+        border-radius: 0;
+    }
+    #topics {
+        padding: 0 5% 0 5%;
+    }
+    .topic-button:hover {
+        font-size: 20.1px;
+    }
+    .other-icon-name {
+        width: 100px;
+        font-size: 22px;
+    }
+    .foot1 h1 {
+        font-size: 50px;
+    }
+    .foot1 h3 {
+        font-size: 22px;
+    }
+    .foot2-contacts-icon img {
+        width: 30px;
+        height: 30px;
+    }
+    .foot2-contacts a {
+        width: 100%;
+        word-wrap: break-word;
+        word-break: break-all;
+        font-size: 12px;
+        text-align: center;
+    }
+    .foot2-contacts {
+        padding-top: 20px;
+        justify-content: flex-start;
+        width: 22%;
+        height: 150px;
+    }
+    .explore-section {
+        justify-content: space-evenly;
+    }
+    .diary-content-box h1 {
+        font-size: 25px;
+    }
+    .diary-content-box p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .recommended-box {
+        height: 55vh;
+    }
+    .recommended-box-content-container {
+        width: 100vw;
+    }
+    .recommended-box-content-container-text {
+        max-width: 400px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .recommended-box-content-container-text h2 {
+        font-size: 35px;
+    }
+    .other-icon-box p {
+        font-size: 15px;
+        text-align: justify;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #day,
+    #date {
+        display: none;
+    }
+    .Nav-Logo {
+        width: 100%;
+        text-align: center;
+    }
+    #navigationmenu li {
+        font-size: 20px;
+    }
+    #navigationmenu a {
+        padding-left: 20px;
+    }
+    .topic-button {
+        font-size: 15px;
+    }
+    h1.all-section-headers {
+        font-size: 40px;
+    }
+}

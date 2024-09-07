@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience shapes style</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <div id="day"></div>
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+
+        <div id="date"></div>
+        <!-- menu -->
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+        <!-- script to display current time and date in navigation bar -->
+        <script>
+            function time() {
+                const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+                var d = new Date();
+                let day = weekday[d.getDay()];
+                let month = months[d.getMonth()];
+
+                document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+                document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+            }
+
+            setInterval(time, 1000);
+        </script>
+        <!-- script for menu icon to open and close navigation menu -->
+        <script>
+            var status = 1
+            document.getElementById("menu").addEventListener("click", statusmenu);
+
+            function statusmenu() {
+
+                if (status == 1) {
+                    document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                    document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                    document.getElementById("midfade").style.opacity = "0";
+                    document.getElementById("toprotate").style.width = "80%";
+                    document.getElementById("botrotate").style.width = "80%";
+                    document.getElementById("menu").style.transform = "translateX(-30vw)";
+                    document.getElementById("navigationmenu").style.right = "0vw";
+                    document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                    menunav();
+
+
+                    status = 0;
+                } else if (status == 0) {
+                    document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("midfade").style.opacity = "1";
+                    document.getElementById("toprotate").style.width = "50%";
+                    document.getElementById("botrotate").style.width = "50%";
+                    document.getElementById("menu").style.transform = "translateX(0px)";
+                    document.getElementById("navigationmenu").innerHTML = "";
+                    document.getElementById("navigationmenu").style.right = "-30vw";
+                    document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                    status = 1;
+
+                }
+
+            }
+
+            function menunav() {
+
+                const object = ["Home", "About", "Blogs", "Fashion Icons"];
+                const link = ["Home Page.html", "About.html", "Blogs.html", "Fashion Icons.html"];
+                for (let i = 0; i < object.length; i++) {
+                    setTimeout(function() {
+                        const navi = document.createElement("li");
+                        const para = document.createElement("a");
+                        para.href = link[i];
+                        para.innerText = object[i];
+                        navi.appendChild(para);
+                        document.getElementById("navigationmenu").appendChild(navi);
+                        var parent = document.getElementById("navigationmenu");
+                        parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                    }, i * 100);
+                }
+            }
+        </script>
+        <ul id="navigationmenu">
+        </ul>
+
+    </nav>
+    <!-- blog section -->
+    <div class="greeting-container" style="background: url('../img/hp/old man with frip.jpg');">
+        <div class="greeting-container-display">
+            <!-- blog image -->
+            <img src="../img/hp/old man with frip.jpg">
+
+        </div>
+
+    </div>
+    <!-- blog date -->
+    <div class="date-container">
+        <div>
+            <h2 style="right: 0;">Saturday</h2>
+        </div>
+        <div>
+            <h2 style="left: 0;">February 19, 2023</h2>
+        </div>
+    </div>
+    <!-- blog content -->
+    <div class="diary-content-box">
+        <h1>Experience shapes style</h1>
+        <p>Fashion is a constantly evolving industry, with new trends and styles emerging each season. It's an industry that often focuses on the young, with many designers and brands targeting younger generations with their collections. However, fashion
+            is not limited to the young, and as we age, our sense of style can become even more refined and unique, shaped by years of experience and a deeper understanding of ourselves and what works for us.</p>
+        <p>Horatio Juno is a perfect example of this. Despite his advanced age, Horatio was dressed impeccably, wearing light skin-brown tones and white Yeezy sneakers that gave him a modern and trendy look. His confidence and poise were apparent in the
+            way he carried himself, and his outfit was a testament to his fashion sense and experience.</p>
+        <p>In an interview, Horatio spoke about his relationship with fashion and how it has evolved over the years. "I've always been interested in fashion," he said. "But it wasn't until I got older that I really started to understand what works for me
+            and what doesn't." Horatio went on to explain how his sense of style has been shaped by his life experiences, and how it has helped him to express himself in new and exciting ways.</p>
+        <p>Horatio's journey with fashion began at a young age. Growing up in a small town, he was always drawn to the way people dressed and how they expressed themselves through their clothing. As he got older, he started to experiment with his own style,
+            trying out different looks and pieces until he found what worked for him. However, it wasn't until later in life that Horatio really started to develop his own unique sense of style.</p>
+        <p>For Horatio, fashion is not just about looking good - it's about feeling good too. "When I dress well, I feel good about myself," he said. "It gives me confidence and helps me to tackle whatever challenges come my way." Horatio's outfit was a
+            perfect reflection of this philosophy, showcasing his unique sense of style while also making him feel confident and comfortable in his own skin.</p>
+        <p>Horatio's fashion sense has been shaped by his life experiences, including his career and personal life. As a successful businessman, he understands the importance of dressing well and presenting himself in a professional manner. However, he also
+            values comfort and practicality, often opting for pieces that are both stylish and functional. In his personal life, Horatio has also faced challenges that have influenced his sense of style. "After I went through a divorce, I really started
+            to focus on myself and my own happiness," he said. "Part of that was finding my own sense of style and expressing myself through my clothing."</p>
+        <p>Horatio's fashion sense is a refreshing reminder that fashion is not limited to the young. With age comes a wealth of experience and wisdom that can be reflected in our sense of style, creating a unique and impactful look that is just as captivating
+            and inspiring as anything worn by the younger generations.</p>
+        <p>As Horatio said, "Fashion is not about age - it's about self-expression and confidence. If you feel good in what you're wearing, that's all that matters." His outfit was a perfect reflection of this philosophy, showcasing his individuality and
+            style while also providing inspiration for others to embrace their own unique sense of fashion.</p>
+        <p>In a world that often values youth and novelty, it's important to remember that fashion is not limited to the young. With age comes a unique sense of style that can be just as impactful and captivating. As Horatio Juno demonstrated, experience
+            shapes style, and fashion is a reflection of who we are and the journey we've been on. It's a reminder that fashion is for everyone, regardless of age or background, and that there is beauty and inspiration to be found in every stage of life.</p>
+
+
+        <div class="diary-button-box">
+            <!-- Read other blog button -->
+            <div class="diary-read-other-button">
+                <a href="Blogs.html">Read Other Blogs</a>
+                <div class="diary-read-other-button-decor"></div>
+            </div>
+        </div>
+    </div>
+    <!-- outfit section -->
+    <div class="outfit-box" id="outfit">
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Outfit
+            </h1>
+        </div>
+        <!-- first outfit -->
+        <div class="outfit-box-content-box">
+            <!-- outfit image -->
+            <div class="outfit-box-content-box-img-box">
+                <div class="outfit-box-content-box-img-box-decor">
+                    <img src="../img/ADIDAS YEEZY BOOST 350 V2bgremove.png">
+                </div>
+            </div>
+            <div class="outfit-box-content-box-details-box-right">
+                <!-- outfit name -->
+                <h1 class="outfit-box-content-box-text-specifics">ADIDAS YEEZY BOOST 350 V2</h1>
+                <!-- outfit price -->
+                <div class="outfit-price-tag-box">
+                    <h4>RM1700.00</h4>
+
+                </div>
+                <!-- outfit description -->
+                <p class="outfit-details">The Yeezy sneaker line, created in collaboration between rapper Kanye West and Adidas, offers cutting-edge design, high-quality construction, and unparalleled comfort. With its innovative use of materials and construction techniques, unique
+                    design elements, and exclusivity, the Yeezy sneaker is a standout in the world of footwear. From casual wearers to serious collectors, there is a Yeezy sneaker for everyone, making it a top choice for fashion-conscious consumers looking
+                    for a statement sneaker or a comfortable and stylish shoe for everyday wear.</p>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- recommended section -->
+    <div class="diary-related-posts-box">
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Recommended
+            </h1>
+        </div>
+        <div class="recommended-box">
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>New Nike Element 55 Light Pink</h2>
+                    <p>February 20, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recomended-shoe-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="New Nike Element 55 Light Pink.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Modestly Chic: Tips for Styling Modest Clothing</h2>
+                    <p>December 19, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-casualwear2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Tips To Style Modest Clothing.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Seren Carney Shines in a Black Jacket</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Styling Trench Coats: Tips for a Modern and Timeless Look</h2>
+                    <p>August 30, 2021</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended-tcoach2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Styling Trench Coats-Tips for a Modern and Timeless Look.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Astro Girl</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/MSCHF big red boots.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Astro Girl.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Fashionable Frost: Dressing for Style and Comfort in Cold Weather</h2>
+                    <p>September 30, 2019</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-tamara-bellis-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Fashionable Frost-Dressing for Style and Comfort in Cold Weather.html">Read</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <hr>
+        <div class="foot2">
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <a href="">www.facebook.com/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="">DRIPLER@gmail.com</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="">pin.it/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>

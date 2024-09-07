@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Red: Bold Fashion</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <div id="day"></div>
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+
+        <div id="date"></div>
+        <!-- menu -->
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+        <!-- script to display current time and date in navigation bar -->
+        <script>
+            function time() {
+                const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+                var d = new Date();
+                let day = weekday[d.getDay()];
+                let month = months[d.getMonth()];
+
+                document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+                document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+            }
+
+            setInterval(time, 1000);
+        </script>
+        <!-- script for menu icon to open and close navigation menu -->
+        <script>
+            var status = 1
+            document.getElementById("menu").addEventListener("click", statusmenu);
+
+            function statusmenu() {
+
+                if (status == 1) {
+                    document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                    document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                    document.getElementById("midfade").style.opacity = "0";
+                    document.getElementById("toprotate").style.width = "80%";
+                    document.getElementById("botrotate").style.width = "80%";
+                    document.getElementById("menu").style.transform = "translateX(-30vw)";
+                    document.getElementById("navigationmenu").style.right = "0vw";
+                    document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                    menunav();
+
+
+                    status = 0;
+                } else if (status == 0) {
+                    document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("midfade").style.opacity = "1";
+                    document.getElementById("toprotate").style.width = "50%";
+                    document.getElementById("botrotate").style.width = "50%";
+                    document.getElementById("menu").style.transform = "translateX(0px)";
+                    document.getElementById("navigationmenu").innerHTML = "";
+                    document.getElementById("navigationmenu").style.right = "-30vw";
+                    document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                    status = 1;
+
+                }
+
+            }
+
+            function menunav() {
+
+                const object = ["Home", "About", "Blogs", "Fashion Icons"];
+                const link = ["Home Page.html", "About.html", "Blogs.html", "Fashion Icons.html"];
+                for (let i = 0; i < object.length; i++) {
+                    setTimeout(function() {
+                        const navi = document.createElement("li");
+                        const para = document.createElement("a");
+                        para.href = link[i];
+                        para.innerText = object[i];
+                        navi.appendChild(para);
+                        document.getElementById("navigationmenu").appendChild(navi);
+                        var parent = document.getElementById("navigationmenu");
+                        parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                    }, i * 100);
+                }
+            }
+        </script>
+        <ul id="navigationmenu">
+        </ul>
+
+    </nav>
+    <!-- blog section -->
+    <div class="greeting-container" style="background: url('../img/hp/eduardo-romero-red.jpg');">
+        <div class="greeting-container-display">
+            <img src="../img/hp/eduardo-romero-red.jpg">
+
+        </div>
+
+    </div>
+    <!-- blog date -->
+    <div class="date-container">
+        <div>
+            <h2 style="right: 0;">Thursday</h2>
+        </div>
+        <div>
+            <h2 style="left: 0;">February 29, 2023</h2>
+        </div>
+    </div>
+    <!-- blog content -->
+    <div class="diary-content-box">
+        <h1>All Red: Bold Fashion</h1>
+        <p>Fashion is an art form that allows individuals to express their personality, creativity, and style. It's a medium through which people can communicate their emotions and identity to the world. One way to make a bold statement with your fashion
+            choices is by wearing an all-red outfit. An all-red ensemble is a powerful fashion statement that exudes confidence, strength, and passion.</p>
+        <p>As I looked at the woman wearing the all-red outfit, I was amazed by her confidence and the way she carried herself. Her choice of outfit was striking and bold, and it spoke volumes about her personality. She was fearless in her fashion choices,
+            and that made her stand out from the crowd. Her dress was a stunning piece that caught my eye right away. The dress had a flowing design that was feminine and graceful. The red color was bold and striking, which made it stand out in the green
+            surroundings.
+        </p>
+        <p>Elinor Johnson, a fashion blogger, says that red is a color that exudes power and passion. She explains that wearing an all-red outfit is a great way to show confidence and make a bold fashion statement. According to Elinor, the key to pulling
+            off an all-red outfit is to balance the different shades of red and pair it with the right accessories.
+        </p>
+        <p>The woman's choice of leggings was a bold one, but it worked perfectly with the dress. The leggings were tight-fitting and hugged her curves perfectly. They added texture and depth to the outfit and made it more versatile. Elinor explains that
+            leggings are a great way to add coverage to an outfit while keeping it stylish. She also advises that when wearing leggings, it's important to pair them with a long top or dress.</p>
+        <p>The woman's choice of accessories was on point. The round sunglasses added a touch of vintage flair to the outfit. The sunglasses were a perfect choice for the outfit as they complemented the red color scheme and added a bit of mystery to the
+            overall look. The sunglasses also gave her an air of confidence and sophistication.</p>
+        <p>The brown reddish boots were the perfect finishing touch to the outfit. They complemented the red color scheme and created a cohesive and stylish appearance. The boots were stylish yet practical, which made them perfect for any occasion. They
+            had a block heel that gave her a bit of height and made her legs look longer.</p>
+        <p>Elinor explains that when wearing an all-red outfit, it's important to choose the right accessories to complement the look. She advises that choosing neutral accessories like brown, black, or beige can help balance out the boldness of the red.
+            She also explains that adding texture and pattern to the outfit can help make it more interesting and dynamic.</p>
+        <p>The woman's all-red outfit was a testament to the power of fashion. It was a confident and bold statement that showcased her personality and style. The monochromatic color scheme was far from boring, and it was a great example of how to pull off
+            a monochromatic look with style and grace.</p>
+        <p>In conclusion, wearing an all-red outfit can be a powerful fashion statement that exudes confidence and strength. It's a great way to show your personality and make a bold statement. When wearing an all-red outfit, it's important to balance the
+            different shades of red and choose the right accessories to complement the look. Remember, fashion is all about expressing yourself, so don't be afraid to take risks and step out of your comfort zone.</p>
+
+
+        <div class="diary-button-box">
+            <!-- Read other blog button -->
+            <div class="diary-read-other-button">
+                <a href="Blogs.html">Read Other Blogs</a>
+                <div class="diary-read-other-button-decor"></div>
+            </div>
+        </div>
+    </div>
+    <!-- recommended section -->
+    <div class="diary-related-posts-box">
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Recommended
+            </h1>
+        </div>
+        <div class="recommended-box">
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>New Nike Element 55 Light Pink</h2>
+                    <p>February 20, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recomended-shoe-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="New Nike Element 55 Light Pink.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Modestly Chic: Tips for Styling Modest Clothing</h2>
+                    <p>December 19, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-casualwear2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Tips To Style Modest Clothing.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Seren Carney Shines in a Black Jacket</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Styling Trench Coats: Tips for a Modern and Timeless Look</h2>
+                    <p>August 30, 2021</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended-tcoach2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Styling Trench Coats-Tips for a Modern and Timeless Look.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Astro Girl</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/MSCHF big red boots.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Astro Girl.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Fashionable Frost: Dressing for Style and Comfort in Cold Weather</h2>
+                    <p>September 30, 2019</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-tamara-bellis-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Fashionable Frost-Dressing for Style and Comfort in Cold Weather.html">Read</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <hr>
+        <div class="foot2">
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <a href="https://www.facebook.com/">www.facebook.com/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="https://mail.google.com/mail/">DRIPLER@gmail.com</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="https://www.pinterest.com/">pin.it/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="https://twitter.com/explore">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>

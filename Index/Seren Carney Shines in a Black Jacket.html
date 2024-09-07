@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seren Carney Shines in a Black Jacket</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <div id="day"></div>
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+
+        <div id="date"></div>
+        <!-- menu -->
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+        <!-- script to display current time and date in navigation bar -->
+        <script>
+            function time() {
+                const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+                var d = new Date();
+                let day = weekday[d.getDay()];
+                let month = months[d.getMonth()];
+
+                document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+                document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+            }
+
+            setInterval(time, 1000);
+        </script>
+        <!-- script for menu icon to open and close navigation menu -->
+        <script>
+            var status = 1
+            document.getElementById("menu").addEventListener("click", statusmenu);
+
+            function statusmenu() {
+
+                if (status == 1) {
+                    document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                    document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                    document.getElementById("midfade").style.opacity = "0";
+                    document.getElementById("toprotate").style.width = "80%";
+                    document.getElementById("botrotate").style.width = "80%";
+                    document.getElementById("menu").style.transform = "translateX(-30vw)";
+                    document.getElementById("navigationmenu").style.right = "0vw";
+                    document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                    menunav();
+
+
+                    status = 0;
+                } else if (status == 0) {
+                    document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("midfade").style.opacity = "1";
+                    document.getElementById("toprotate").style.width = "50%";
+                    document.getElementById("botrotate").style.width = "50%";
+                    document.getElementById("menu").style.transform = "translateX(0px)";
+                    document.getElementById("navigationmenu").innerHTML = "";
+                    document.getElementById("navigationmenu").style.right = "-30vw";
+                    document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                    status = 1;
+
+                }
+
+            }
+
+            function menunav() {
+
+                const object = ["Home", "About", "Blogs", "Fashion Icons"];
+                const link = ["Home Page.html", "About.html", "Blogs.html", "Fashion Icons.html"];
+                for (let i = 0; i < object.length; i++) {
+                    setTimeout(function() {
+                        const navi = document.createElement("li");
+                        const para = document.createElement("a");
+                        para.href = link[i];
+                        para.innerText = object[i];
+                        navi.appendChild(para);
+                        document.getElementById("navigationmenu").appendChild(navi);
+                        var parent = document.getElementById("navigationmenu");
+                        parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                    }, i * 100);
+                }
+            }
+        </script>
+        <ul id="navigationmenu">
+        </ul>
+
+    </nav>
+    <!-- blog section -->
+    <div class="greeting-container" style="background: url('../img/hp/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg');">
+        <!-- blog image -->
+        <div class="greeting-container-display">
+            <img src="../img/SerenCarney/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg">
+
+        </div>
+
+    </div>
+    <!-- blog date -->
+    <div class="date-container">
+        <div>
+            <h2 style="right: 0;">Friday</h2>
+        </div>
+        <div>
+            <h2 style="left: 0;">January 20, 2023</h2>
+        </div>
+    </div>
+    <!-- blog content -->
+    <div class="diary-content-box">
+        <h1>Seren Carney Shines in a Black Jacket</h1>
+        <p>Seren Carney's latest appearance in a black Abercrombie Classic jacket has left the fashion industry buzzing with excitement. The jacket's timeless design has stood the test of time, and Seren's ability to style it perfectly has made it a must-have
+            piece for any fashion enthusiast. In a recent interview, Seren shared her thoughts on the jacket, explaining how it has become one of her favorite pieces in her wardrobe.</p>
+        <p>"I love the Abercrombie Classic jacket. It's a timeless piece that can be worn season after season. Its versatility and durability make it a great investment piece that can be paired with different outfits, making it a reliable choice. I love
+            the simplicity of the design, and how it can be dressed up or down, making it perfect for any occasion," Seren said.</p>
+        <p>Seren's love for the jacket's design is evident, and her glowing endorsement of it has made it a must-have piece for any fashion enthusiast. She emphasized that the Abercrombie Classic jacket is a timeless piece that can be worn on repeat and
+            is a versatile piece that can be dressed up or down.</p>
+        <p>"Fashion is an art form, and I enjoy expressing myself through different styles and pieces. It's not just about following trends but rather expressing oneself through style," Seren said. "I think it's important to have fun with fashion, and everyone
+            should feel confident in their personal style."</p>
+        <p>Seren's unique fashion sense and her willingness to experiment with different pieces have made her a rising star in the fashion industry. Her ability to mix and match different pieces to create unique outfits is what sets her apart. She explained
+            that the jacket is a staple in her wardrobe, as it can be paired with various outfits, making it a reliable piece to have.</p>
+        <p>"The Abercrombie Classic jacket is one of those pieces that can be worn on repeat, and no one will even notice. It's a versatile piece that can be dressed up or down, making it perfect for any occasion. I love how it can be worn with a dress or
+            jeans and a t-shirt," Seren said.</p>
+        <p>The black Abercrombie Classic jacket's design is simple and elegant, making it perfect for any occasion. Its classic design has stood the test of time, and Seren believes that it is the simplicity of the jacket that makes it so special. In her
+            interview, Seren praised the jacket's high-quality material, which makes it durable and long-lasting.</p>
+        <p>"I love the high-quality material of the Abercrombie Classic jacket. It's durable and long-lasting, which makes it a great investment piece. Its practicality and versatility make it a perfect addition to any wardrobe," Seren said.</p>
+        <p>Seren accessorized her outfit with dark sunglasses, which added an air of sophistication to her look. She explained that the sunglasses were the perfect addition to the outfit, as they complemented the jacket's simplicity.</p>
+        <p>"I love how the sunglasses added a touch of sophistication to my overall look. Accessories can make or break an outfit, and I think the sunglasses were the perfect addition," Seren said.</p>
+        <p>Seren's fashion sense is unique, and she believes that fashion is not just about following trends, but it's also about expressing oneself through style. Her love for the Abercrombie Classic jacket's design is evident, and her endorsement of its
+            versatility and durability has made it a must-have piece for any fashion enthusiast. Her ability to create unique outfits by mixing and matching different pieces has made her a style icon in the fashion industry.</p>
+
+        <div class="diary-button-box">
+            <!-- Read other blog button -->
+            <div class="diary-read-other-button">
+                <a href="Blogs.html">Read Other Blogs</a>
+                <div class="diary-read-other-button-decor"></div>
+            </div>
+        </div>
+    </div>
+    <!-- outfit section -->
+    <div class="outfit-box" id="outfit">
+        <!-- outfit header -->
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Outfit
+            </h1>
+        </div>
+        <div class="outfit-box-content-box">
+            <div class="outfit-box-content-box-img-box">
+                <div class="outfit-box-content-box-img-box-decor">
+                    <img src="../img/SerenCarney/Abercrombie & Fitch Classic Bomber Jacket Blackbgremove.png">
+                </div>
+            </div>
+            <div class="outfit-box-content-box-details-box-right">
+                <h1 class="outfit-box-content-box-text-specifics">Abercrombie & Fitch Classic Bomber Jacket Black</h1>
+                <div class="outfit-price-tag-box">
+                    <h4>RM69.95</h4>
+
+                </div>
+                <p class="outfit-details">The Abercrombie Classic jacket is a timeless and versatile piece that is essential for any fashion enthusiast's wardrobe. Its simplicity and elegance make it stand out, while its high-quality material ensures it will last for years to
+                    come. Seren Carney's endorsement of the jacket's practicality and versatility cements it as a must-have investment piece that can be dressed up or down for any occasion. If you're looking for a reliable and stylish jacket, the Abercrombie
+                    Classic is definitely worth considering.</p>
+            </div>
+        </div>
+        <div class="outfit-box-content-box">
+            <div class="outfit-box-content-box-details-box-left">
+                <h1 class="outfit-box-content-box-text-specifics">REALITY EYEWEAR Kiss Kiss Sunglasses</h1>
+                <div class="outfit-price-tag-box">
+                    <h4>RM262.00</h4>
+
+                </div>
+                <p class="outfit-details">The REALITY EYEWEAR Kiss Kiss Sunglasses are a stylish and practical accessory that can elevate any outfit. The unique and bold design, combined with high-quality materials and 100% UV protection lenses, make them a great investment for
+                    those looking for a statement piece that also protects their eyes from harmful rays. Seren Carney's endorsement of the sunglasses adds to their credibility and makes them a must-have for fashion enthusiasts looking to make a statement.</p>
+            </div>
+            <div class="outfit-box-content-box-img-box">
+                <div class="outfit-box-content-box-img-box-decor">
+                    <img src="../img/SerenCarney/sunglassremove1.png">
+                </div>
+            </div>
+
+        </div>
+        <div class="outfit-box-content-box">
+            <div class="outfit-box-content-box-img-box">
+                <div class="outfit-box-content-box-img-box-decor">
+                    <img src="../img/SerenCarney/GUESS bag remove.png">
+                </div>
+            </div>
+            <div class="outfit-box-content-box-details-box-right">
+                <h1 class="outfit-box-content-box-text-specifics">GUESS Silvana Logo Detailed Tote Bag</h1>
+                <div class="outfit-price-tag-box">
+                    <h4>RM189.99</h4>
+
+                </div>
+                <p class="outfit-details">The GUESS Silvana Logo Detailed Tote Bag is a statement accessory that is both stylish and practical. Its unique design and high-quality materials make it a great investment for those looking to elevate their style, while the spacious
+                    interior is perfect for carrying all your daily essentials. Seren Carney's endorsement of the bag adds to its credibility and makes it a must-have for fashion enthusiasts looking to make a statement.</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- recommended section -->
+    <div class="diary-related-posts-box">
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Recommended
+            </h1>
+        </div>
+        <div class="recommended-box">
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>New Nike Element 55 Light Pink</h2>
+                    <p>February 20, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recomended-shoe-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="New Nike Element 55 Light Pink.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Modestly Chic: Tips for Styling Modest Clothing</h2>
+                    <p>December 19, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-casualwear2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Tips To Style Modest Clothing.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Seren Carney Shines in a Black Jacket</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Styling Trench Coats: Tips for a Modern and Timeless Look</h2>
+                    <p>August 30, 2021</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended-tcoach2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Styling Trench Coats-Tips for a Modern and Timeless Look.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Astro Girl</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/MSCHF big red boots.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Astro Girl.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Fashionable Frost: Dressing for Style and Comfort in Cold Weather</h2>
+                    <p>September 30, 2019</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-tamara-bellis-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Fashionable Frost-Dressing for Style and Comfort in Cold Weather.html">Read</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <hr>
+        <div class="foot2">
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <a href="">www.facebook.com/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="">DRIPLER@gmail.com</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="">pin.it/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White On White</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <div id="day"></div>
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+
+        <div id="date"></div>
+        <!-- menu -->
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+        <!-- script to display current time and date in navigation bar -->
+        <script>
+            function time() {
+                const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+                var d = new Date();
+                let day = weekday[d.getDay()];
+                let month = months[d.getMonth()];
+
+                document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+                document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+            }
+
+            setInterval(time, 1000);
+        </script>
+        <!-- script for menu icon to open and close navigation menu -->
+        <script>
+            var status = 1
+            document.getElementById("menu").addEventListener("click", statusmenu);
+
+            function statusmenu() {
+
+                if (status == 1) {
+                    document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                    document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                    document.getElementById("midfade").style.opacity = "0";
+                    document.getElementById("toprotate").style.width = "80%";
+                    document.getElementById("botrotate").style.width = "80%";
+                    document.getElementById("menu").style.transform = "translateX(-30vw)";
+                    document.getElementById("navigationmenu").style.right = "0vw";
+                    document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                    menunav();
+
+
+                    status = 0;
+                } else if (status == 0) {
+                    document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                    document.getElementById("midfade").style.opacity = "1";
+                    document.getElementById("toprotate").style.width = "50%";
+                    document.getElementById("botrotate").style.width = "50%";
+                    document.getElementById("menu").style.transform = "translateX(0px)";
+                    document.getElementById("navigationmenu").innerHTML = "";
+                    document.getElementById("navigationmenu").style.right = "-30vw";
+                    document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                    status = 1;
+
+                }
+
+            }
+
+            function menunav() {
+
+                const object = ["Home", "About", "Blogs", "Fashion Icons"];
+                const link = ["Home Page.html", "About.html", "Blogs.html", "Fashion Icons.html"];
+                for (let i = 0; i < object.length; i++) {
+                    setTimeout(function() {
+                        const navi = document.createElement("li");
+                        const para = document.createElement("a");
+                        para.href = link[i];
+                        para.innerText = object[i];
+                        navi.appendChild(para);
+                        document.getElementById("navigationmenu").appendChild(navi);
+                        var parent = document.getElementById("navigationmenu");
+                        parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                    }, i * 100);
+                }
+            }
+        </script>
+        <ul id="navigationmenu">
+        </ul>
+
+    </nav>
+    <!-- blog section -->
+    <div class="greeting-container" style="background: url('../img/hp/bryan\ kith\ white\ jacke.jpg');">
+        <!-- blog image -->
+        <div class="greeting-container-display">
+            <img src="../img/hp/bryan kith white jacke.jpg">
+        </div>
+
+    </div>
+    <!-- blog date -->
+    <div class="date-container">
+        <div>
+            <h2 style="right: 0;">Friday</h2>
+        </div>
+        <div>
+            <h2 style="left: 0;">January 20, 2023</h2>
+        </div>
+    </div>
+    <!-- blog content -->
+    <div class="diary-content-box">
+        <h1>White On White</h1>
+        <p>Bryan Cranston is known for his iconic roles in Breaking Bad and Malcolm in the Middle, but in Kith's 2023 Spring Delivery I, he's showcasing a different kind of performance: fashion. In the latest campaign, Cranston is sporting head-to-toe white,
+            paired with Adidas Samba shoes, and it's a look that's making waves.</p>
+        <p>The campaign features Cranston in a variety of settings, from walking down the street to lounging on a rooftop. But no matter the backdrop, the all-white ensemble stands out. From a crisp white tee to tailored white pants, every piece is perfectly
+            tailored to Cranston's lean physique. It's a look that's understated but confident.</p>
+        <p>"I love the simplicity and purity of white," Cranston said in an interview with Kith. "It's a color that can be calming and serene, but also bold and striking. It's the perfect canvas for any outfit, and I wanted to experiment with that for this
+            campaign."
+        </p>
+        <p>"The collection itself is a study in minimalism, with clean lines and classic silhouettes taking center stage. But it's Cranston's interpretation of the all-white look that's stealing the show. He wears a range of garments from the collection,
+            including a white crewneck sweatshirt, a white button-up shirt, and white cargo pants.</p>
+        <p>Of course, the Adidas Samba shoes are the perfect finishing touch. With their classic design and crisp white colorway, they tie the entire look together. "I've always been a fan of Adidas," Cranston said. "Their designs are timeless, and the Samba
+            is no exception. Plus, they're so comfortable."</p>
+        <p>But it's not just about the clothes and shoes. For Cranston, fashion is a way of expressing himself and connecting with others. "When you wear something that makes you feel good, it shows," he said. "And when people see that, it can be a conversation
+            starter. It's a way of connecting with people, even if you don't say a word."</p>
+        <p>Cranston's love of fashion and style is evident in his approach to the campaign. He's not just wearing the clothes, he's embodying them. "I feel like a blank slate," Cranston said. "There's something liberating about shedding all the colors and
+            patterns and just focusing on the simplicity of white. It's a look that's understated but confident."</p>
+        <p>For Kith, the campaign is a celebration of simplicity and timeless style. "We wanted to create a collection that was versatile and effortless," said Ronnie Fieg, Kith's founder. "And who better to showcase that than Bryan Cranston? He's a master
+            of his craft, and he brings that same level of dedication and expertise to fashion."</p>
+        <p>So if you're looking to make a statement this spring, take a page from Bryan Cranston's book and go all white. It's a look that's timeless, effortless, and undeniably cool. "Fashion should be fun," Cranston said. "It's not about following trends
+            or rules. It's about finding what makes you feel good and owning it." With Kith's Spring Delivery I, you can do just that.</p>
+
+
+        <div class="diary-button-box">
+            <!-- Read other blog button -->
+            <div class="diary-read-other-button">
+                <a href="Blogs.html">Read Other Blogs</a>
+                <div class="diary-read-other-button-decor"></div>
+            </div>
+        </div>
+    </div>
+    <!-- outfit section -->
+    <div class="outfit-box" id="outfit">
+        <div class="display-pieces-header-box">
+            <!-- outfit header -->
+            <h1 class="all-section-headers">
+                Outfit
+            </h1>
+        </div>
+        <!-- first outfit -->
+        <div class="outfit-box-content-box">
+            <!-- outfit image -->
+            <div class="outfit-box-content-box-img-box">
+                <div class="outfit-box-content-box-img-box-decor">
+                    <img src="../img/adidas samba-bgremove.jpg">
+                </div>
+            </div>
+            <div class="outfit-box-content-box-details-box-right">
+                <!-- outfit name -->
+                <h1 class="outfit-box-content-box-text-specifics">Adidas Samba</h1>
+                <!-- outfit price -->
+                <div class="outfit-price-tag-box">
+                    <h4>RM642.95</h4>
+
+                </div>
+                <!-- outfit description -->
+                <p class="outfit-details">The Adidas Samba shoes are a classic sneaker with a sleek design, comfortable fit, and timeless style. Worn by Bryan Cranston in the Kith 2023 Spring Delivery I campaign, the all-white version is particularly versatile and pairs well with
+                    a range of colors and patterns. While they may not be the most high-tech shoes on the market, the foam insole provides ample cushioning, and the gum rubber sole offers excellent support and traction. Overall, the Adidas Samba shoes
+                    are a solid choice for anyone looking for a versatile, comfortable, and stylish pair of sneakers.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- recommended section -->
+    <div class="diary-related-posts-box">
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers">
+                Recommended
+            </h1>
+        </div>
+        <div class="recommended-box">
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>New Nike Element 55 Light Pink</h2>
+                    <p>February 20, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recomended-shoe-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="New Nike Element 55 Light Pink.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Modestly Chic: Tips for Styling Modest Clothing</h2>
+                    <p>December 19, 2022</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-casualwear2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Tips To Style Modest Clothing.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Seren Carney Shines in a Black Jacket</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Styling Trench Coats: Tips for a Modern and Timeless Look</h2>
+                    <p>August 30, 2021</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended-tcoach2-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Styling Trench Coats-Tips for a Modern and Timeless Look.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Astro Girl</h2>
+                    <p>February 2, 2023</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/MSCHF big red boots.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Astro Girl.html">Read</a>
+                </div>
+            </div>
+            <div class="recommended-box-content-container">
+                <div class="recommended-box-content-container-text">
+                    <h2>Fashionable Frost: Dressing for Style and Comfort in Cold Weather</h2>
+                    <p>September 30, 2019</p>
+                </div>
+                <div class="recommended-box-content-container-img">
+                    <img src="../img/recommended/recommended-tamara-bellis-2.jpg"></img>
+                </div>
+                <div class="recommended-box-content-container-button-container">
+                    <a href="Fashionable Frost-Dressing for Style and Comfort in Cold Weather.html">Read</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <hr>
+        <div class="foot2">
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <a href="https://www.facebook.com/">www.facebook.com/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="https://mail.google.com/mail/">DRIPLER@gmail.com</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="https://www.pinterest.com/">pin.it/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="https://twitter.com/explore">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>

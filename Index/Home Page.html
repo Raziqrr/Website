@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dripler</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <!-- element to display the day and time -->
+        <div id="day"></div>
+        <!-- website logo -->
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+        <!-- element to display the current date -->
+        <div id="date"></div>
+        <!-- menu icon with three horizontal lines -->
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+
+        <!-- navigation menu -->
+        <ul id="navigationmenu">
+        </ul>
+    </nav>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+    <!-- script to display current time and date in navigation bar -->
+    <script>
+        function time() {
+            // arrays to store weekday and month names
+            const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            // create new Date object
+            var d = new Date();
+            // get weekday and month names from arrays
+            let day = weekday[d.getDay()];
+            let month = months[d.getMonth()];
+            // set text content of day and date elements
+            document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+            document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+        }
+        // update time every second
+        setInterval(time, 1000);
+    </script>
+    <!-- script for menu icon to open and close navigation menu -->
+    <script>
+        // Set initial status to 1
+        var status = 1
+            // Add event listener to menu button
+        document.getElementById("menu").addEventListener("click", statusmenu);
+        // Function to handle menu button click
+        function statusmenu() {
+            // If menu is closed, open it
+            if (status == 1) {
+                document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                document.getElementById("midfade").style.opacity = "0";
+                document.getElementById("toprotate").style.width = "80%";
+                document.getElementById("botrotate").style.width = "80%";
+                document.getElementById("menu").style.transform = "translateX(-30vw)";
+                document.getElementById("navigationmenu").style.right = "0vw";
+                document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                menunav();
+
+                // Set status to 0 (menu is open)
+                status = 0;
+            } else if (status == 0) {
+                document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                document.getElementById("midfade").style.opacity = "1";
+                document.getElementById("toprotate").style.width = "50%";
+                document.getElementById("botrotate").style.width = "50%";
+                document.getElementById("menu").style.transform = "translateX(0px)";
+                document.getElementById("navigationmenu").innerHTML = "";
+                document.getElementById("navigationmenu").style.right = "-30vw";
+                document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                status = 1;
+                // Set status to 1 (menu is closed)
+            }
+
+        }
+        // Function to populate the navigation menu with links
+        function menunav() {
+            // Define array of menu items and corresponding links
+            const object = ["Home", "About", "Blogs", "Fashion Icons"];
+            const link = ["Home Page.html", "About.html", "Blogs.html", "Fashion Icons.html"];
+            for (let i = 0; i < object.length; i++) {
+                // Create a list item and anchor tag for each menu item
+                setTimeout(function() {
+                    const navi = document.createElement("li");
+                    const para = document.createElement("a");
+                    para.href = link[i];
+                    para.innerText = object[i];
+                    navi.appendChild(para);
+                    document.getElementById("navigationmenu").appendChild(navi);
+                    var parent = document.getElementById("navigationmenu");
+                    // Add class "menulist" to each anchor tag
+                    parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                }, i * 100);
+            }
+        }
+    </script>
+
+    <div class="Greet-box">
+        <!-- Input field to enter name -->
+        <input type="text" id="name1" name="name1" placeholder="- Enter Your Name" />
+        <!-- Image of boots -->
+        <img src="../img/hp/boots4-removebg2.png">
+        <!-- Container for background image -->
+        <div class="Greet-box-image-container">
+            <img src="../img/hp/boots4-prevbackground.jpg">
+        </div>
+        <!-- Container for text -->
+        <div class="Greet-box-text-container ">
+            <h1 id="mainheader"></h1>
+        </div>
+    </div>
+    <!-- Script for setting opacity and transform of elements on scroll and resize -->
+    <script>
+        // Get all elements with class "diaries-item-box"
+        const elements = document.getElementsByClassName("diaries-item-box");
+        // Function to check if an element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            const threshold = 0.25; // adjust this value to set when the opacity starts to fade
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            const topThreshold = Math.floor(threshold * windowHeight);
+            const bottomThreshold = Math.floor((1 - threshold) * windowHeight);
+
+            return rect.top <= bottomThreshold && rect.bottom >= topThreshold;
+        }
+
+        let lastScrollPosition = 0;
+        // Function to set opacity and transform of elements
+        function setOpacity() {
+            for (let i = 0; i < elements.length; i++) {
+                if (isInViewport(elements[i])) {
+                    elements[i].style.opacity = "1";
+                    if (window.scrollY > lastScrollPosition) {
+                        elements[i].style.transform = "translateY(-30px)";
+                    } else {
+                        elements[i].style.transform = "translateY(30px)";
+                    }
+                } else {
+                    elements[i].style.opacity = "0";
+
+                }
+            }
+            lastScrollPosition = window.scrollY;
+        }
+        // Add event listeners for scroll and resize
+        window.addEventListener("scroll", setOpacity);
+        window.addEventListener("resize", setOpacity);
+        // Call setOpacity function on load
+        setOpacity();
+    </script>
+    <div id="topics">
+        <!-- This is a topic card with an image and a button link to the "Fashion Icons" page -->
+        <div class="topic">
+            <img src="../img/hp/vivienne topic.jpg">
+            <a href="Fashion Icons.html" class="topic-button">Fashion Icons</a>
+        </div>
+        <!-- This is a topic card with an image and a button link to the "Blogs" page -->
+        <div class="topic">
+            <img src="../img/hp/bryan kith white jacket.jpeg">
+            <a href="Blogs.html" class="topic-button">Blogs</a>
+        </div>
+        <!-- This is a topic card with an image and a button link to the "Tips" section of the "Blogs" page -->
+        <div class="topic">
+            <img src="../img/hp/fashion tips.jpg">
+            <a href="Blogs.html#tips" class="topic-button">Tips</a>
+        </div>
+    </div>
+    <div class="display-pieces-header-box">
+        <h1 class="all-section-headers">
+            <!-- This div contains the header for the Latest Blogs section -->
+            Latest Blogs
+        </h1>
+    </div>
+    <div class="diaries">
+        <!-- This div contains the individual blog posts -->
+        <div class="diaries-item-box">
+            <!-- This div contains the image and text for the first blog post -->
+            <div class="diaries-item-image">
+                <!-- This div contains the image for the first blog post -->
+                <img src="../img/hp/Abercrombie & Fitch Classic Bomber Jacket Black model.jpg">
+            </div>
+            <!-- This div contains the text for the first blog post -->
+            <div class="diaries-item-text">
+
+                <h2>
+                    Seren Carney Shines in a Black Jacket
+                </h2>
+                <div class="diary-date">
+                    <!-- This div contains the date for the first blog post -->
+                    <div>Friday</div>
+                    <div>17/2/2023</div>
+                </div>
+                <!-- This paragraph contains the content for the first blog post -->
+                <p>
+                    Seren Carney impressed me with her sense of fashion. The post focuses on the black Abercrombie Classic jacket and dark sunglasses that Seren wore, which added a touch of sophistication to her look. Seren spoke about her approach to fashion and how she
+                    likes to experiment with different looks. The post also provides details on the outfit, describing the jacket as high-quality and timeless. The post concludes by highlighting the simplicity and elegance of Seren's outfit and expressing
+                    excitement for her future fashion choices.
+                </p>
+                <!-- This div contains the person and read more link for the first blog post -->
+                <div class="diary-bottom-box">
+                    <div>- Ft. Seren Carney</div>
+                    <a href="Seren Carney Shines in a Black Jacket.html">Read Post</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/MSCHF big red boots.jpg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    Astro Girl
+                </h2>
+                <div class="diary-date">
+                    <div>Sunday</div>
+                    <div>21/2/2023</div>
+                </div>
+                <p>
+                    I couldn't help but notice the big red Astro Boy boots she was wearing. In my review, I complimented how cute and stylish the boots looked on her, and how they added a pop of color and personality to her overall look. Sarah shared her personal fashion
+                    philosophy and style tips, emphasizing the importance of feeling comfortable and confident in what you wear. Overall, I was impressed with Sarah's fashion sense and how effortlessly she pulled off such a bold look with those amazing
+                    boots.
+                </p>
+                <div class="diary-bottom-box">
+                    <div>- Ft. Sarah Snyder</div>
+                    <a href="Astro Girl.html">Read Post</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/bryan kith white jacke.jpg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    White On White
+                </h2>
+                <div class="diary-date">
+                    <div>Monday</div>
+                    <div>25/2/2022</div>
+                </div>
+                <p>
+                    I wrote about Bryan Cranston's recent appearance for the Kith Spring 2023 collection on social media. Bryan was seen wearing a white Kith jacket paired with a full white outfit, and I couldn't help but comment on how amazing the outfit looked on him.
+                    The combination of colors and style was simply stunning, and I was impressed by the attention to detail and the quality of the materials used in the outfit. In addition, the stylish sunglasses he was wearing complemented the outfit
+                    perfectly, creating a cohesive and elegant appearance. The frame design and color of the sunglasses were a great example of how to elevate an outfit with the right accessories. Overall, I think that Bryan's white-on-white look and
+                    choice of sunglasses were a great example of how to create a chic and sophisticated outfit that is perfect for any occasion.
+                </p>
+                <div class="diary-bottom-box">
+                    <div>- Ft. Bryan Cranston</div>
+                    <a href="White On White.html">Read Post</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/eduardo-romero-red.jpg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    All Red: Bold Fashion
+                </h2>
+                <div class="diary-date">
+                    <div>Thursday</div>
+                    <div>29/2/2022</div>
+                </div>
+                <p>
+                    From her red leggings to her classic round sunglasses, and even her brown reddish boots, everything she wore was red. Despite the monochromatic color scheme, the outfit was far from boring. The woman's red dress was stunning and had a flowing, feminine
+                    design that looked great against the backdrop of the grass field she stood on. The red leggings were a bold choice that added a pop of color and texture to the outfit, while the classic round sunglasses added a touch of vintage flair.
+                    The brown reddish boots complemented the red color scheme perfectly, creating a cohesive and stylish appearance. Overall, the woman's all-red outfit was a bold and confident fashion statement that caught my eye. It was a great example
+                    of how to pull off a monochromatic look with style and grace.
+                    <div class="diary-bottom-box">
+                        <div>- Ft. Elinor Johnson</div>
+                        <a href="All Red-Bold Fashion.html">Read Post</a>
+                    </div>
+            </div>
+
+        </div>
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/future armani.jpeg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    Armani Swag
+                </h2>
+                <div class="diary-date">
+                    <div>Wednesday</div>
+                    <div>27/2/2023</div>
+                </div>
+                <p>
+                    A shared passion for Bugattis may have initially brought together Future and Giorgio Armani as seemingly unlikely friends, but it seems like the two are bonding over menswear as well. Landing in Milan amid the buzz of Pitti Uomo this week, the Atlanta
+                    rapper with model looks stepped out to lend his stylish support to his newfound bestie. Zipped up in a forest green shearling-lined jacket from the designer, the striking MC strode along in a pair of maroon and gray plaid wool trousers
+                    as he made his way to his front row perch at Armani’s show this morning. Perhaps not Fashion Week’s most conventional of suspects, Future accented his Italian threads with the key accoutrement worn by any fashion insider in the know:
+                    a pair of black wraparound sunglasses.
+                    <div class="diary-bottom-box">
+                        <div>- Ft. Future</div>
+                        <a href="Armani Swag.html">Read Post</a>
+                    </div>
+            </div>
+
+        </div>
+        <div class="diaries-item-box">
+            <div class="diaries-item-image">
+                <img src="../img/hp/old man with frip.jpg">
+            </div>
+            <div class="diaries-item-text">
+                <h2>
+                    Experience shapes style
+                </h2>
+                <div class="diary-date">
+                    <div>Saturday</div>
+                    <div>19/2/2023</div>
+                </div>
+                <p>Despite his advanced age, he was dressed impeccably, wearing light skin-brown tones and white Yeezy sneakers that gave him a modern and trendy look. His confidence and poise were apparent in the way he carried himself, and his outfit was
+                    a testament to his fashion sense and experience. It was a refreshing reminder that fashion is not limited to the young and that with age comes a unique sense of style that can be just as impactful and captivating.
+                    <div class="diary-bottom-box">
+                        <div>- Ft. Horatio Juno</div>
+                        <a href="Experience shapes style.html">Read Post</a>
+                    </div>
+            </div>
+
+        </div>
+        <div class="diary-button-box">
+            <div class="diary-read-other-button">
+                <a href="Blogs.html">Read More Blogs</a>
+
+                <div class="diary-read-other-button-decor"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="display-pieces-box" id="featured">
+        <div class="display-pieces-header-box">
+            <h1 class="all-section-headers ">
+                Featured Pieces
+            </h1>
+            <h3 class="all-section-desc">The best highly fashionable clothes</h3>
+        </div>
+
+        <div class="display-pieces-containers-col">
+
+
+            <div class="display-pieces-containers-items">
+                <div class="display-pieces-containers-items-img ">
+                    <img src="../img/Nike Element 55 Light Pink-bgremove.png">
+
+                </div>
+                <div class="display-pieces-containers-items-text-container ">
+                    <h2>NIKE</h2>
+                    <h4>React Element WMN
+                    </h4>
+                </div><a class="rainbow" href="New Nike Element 55 Light Pink.html#outfit">View</a>
+
+            </div>
+            <div class="display-pieces-containers-items ">
+                <div class="display-pieces-containers-items-img ">
+                    <img src="../img/hp/Abercrombie & Fitch Classic Bomber Jacket Blackbgremove.png">
+
+                </div>
+                <div class="display-pieces-containers-items-text-container ">
+                    <h2>Abercrombie & Fitch</h2>
+                    <h4>Classic Bomber Jacket Black</h4>
+                </div><a class="rainbow" href="Seren Carney Shines in a Black Jacket.html#outfit">View</a>
+
+            </div>
+
+
+            <div class="display-pieces-containers-items ">
+                <div class="display-pieces-containers-items-img ">
+                    <img src="../img/hp/Cuyana_Relaxed_Trench-removebg.png ">
+
+                </div>
+                <div class="display-pieces-containers-items-text-container ">
+                    <h2>Cuyana</h2>
+                    <h4>Relaxed Trench Coat</h4>
+                </div><a class="rainbow" href="New And Improved Cuyana Trench Coat.html#outfit">View</a>
+
+            </div>
+
+            <div class="display-pieces-containers-items ">
+                <div class="display-pieces-containers-items-img ">
+                    <img src="../img/hp/MSCHF-Big-Red-Boot-bootboot.png">
+
+                </div>
+                <div class="display-pieces-containers-items-text-container ">
+                    <h2>MSCHF</h2>
+                    <h4>Big Red Boot</h4>
+                </div><a class="rainbow" href="Astro Girl.html#outfit">View</a>
+
+            </div>
+
+            <div class="display-pieces-containers-items ">
+                <div class="display-pieces-containers-items-img ">
+                    <img src="../img/SerenCarney/GUESS%20bag%20remove.png">
+
+                </div>
+                <div class="display-pieces-containers-items-text-container ">
+                    <h2>GUESS</h2>
+                    <h4>Silvana Logo Detailed Tote Bag</h4>
+                </div><a class="rainbow" href="Seren Carney Shines in a Black Jacket.html#outfit">View</a>
+
+            </div>
+            <div class="display-pieces-containers-items ">
+                <div class="display-pieces-containers-items-img ">
+                    <img src="../img/hp/ALLSAINTS_Casi_Heidi_Kimono-removebg.png ">
+
+                </div>
+                <div class="display-pieces-containers-items-text-container ">
+                    <h2>
+                        ALLSAINTS
+                    </h2>
+                    <h4>Casi Heidi Kimono</h4>
+                </div><a class="rainbow" href="The Alluring AlLLSAINTS Casi Heidi Kimono.html#outfit">View</a>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Footer section -->
+    <div class="footer">
+        <!-- First row of the footer -->
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <hr>
+        <!-- Second row of the footer -->
+        <div class="foot2">
+            <!-- Contact information section -->
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <a href="https://www.facebook.com/">www.facebook.com/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="https://mail.google.com/mail/">DRIPLER@gmail.com</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="https://www.pinterest.com/">pin.it/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="https://twitter.com/explore">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function welcoming() {
+            alert("Welcome To DIPLER!");
+        }
+
+        window.onload = function() {
+            console.log(10);
+            welcoming();
+        };
+    </script>
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+    <script>
+        const images1 = ["../img/hp/vivienne topic.jpg", "../img/hp/bryan kith white jacket.jpeg", "../img/hp/fashion tips.jpg"];
+        const images2 = ["../img/hp/vivienne topic2.jpg", "../img/hp/blog reading.jpg", "../img/hp/fashion tips2.jpg"];
+        const telement = document.getElementsByClassName("topic");
+
+        for (let i = 0; i < telement.length; i++) {
+            (function() {
+                let number = i;
+
+                telement[i].addEventListener("mouseover", function() {
+                    alter1(this, number);
+                });
+
+                telement[i].addEventListener("mouseout", function() {
+                    alter2(this, number);
+                });
+            })();
+        }
+
+        function alter1(element, number) {
+            console.log("mouseover " + number);
+
+            var imgElement = element.getElementsByTagName("img")[0];
+            imgElement.setAttribute("src", images2[number]);
+        }
+
+        function alter2(element, number) {
+            console.log("mouseout " + number);
+
+            var imgElement = element.getElementsByTagName("img")[0];
+            imgElement.setAttribute("src", images1[number]);
+
+        }
+    </script>
+    <script>
+        function isInViewport2(element) {
+            const rect = element.getBoundingClientRect();
+            const threshold = 0.4; // adjust this value to set when the opacity starts to fade
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            const topThreshold = Math.floor(threshold * windowHeight);
+            const bottomThreshold = Math.floor((1 - threshold) * windowHeight);
+
+            return rect.top <= bottomThreshold && rect.bottom >= topThreshold;
+        }
+        const parentElement = document.getElementById("topics");
+        let lastScroll = 0;
+
+        function setOpacity(parentElement) {
+            if (isInViewport2(parentElement)) {
+                const childElements = parentElement.children;
+                let lastVisibleChildIndex = -1;
+
+                for (let i = 0; i < childElements.length; i++) {
+                    const childElement = childElements[i];
+
+                    if (isInViewport2(childElement)) {
+                        lastVisibleChildIndex = i;
+                    }
+
+                    setTimeout(() => {
+                        if (i <= lastVisibleChildIndex) {
+                            childElement.style.opacity = "1";
+                            childElement.style.transform = "scale(1)";
+
+                        } else {
+                            childElement.style.opacity = "0";
+                            childElement.style.transform = "scale(0.9)";
+                        }
+                    }, i * 150); // 500ms delay between each loop
+                }
+
+                lastScroll = window.scrollY;
+            }
+        }
+
+        window.addEventListener("scroll", () => setOpacity(parentElement));
+        window.addEventListener("resize", () => setOpacity(parentElement));
+
+        setOpacity(parentElement);
+    </script>
+    <script>
+        var i = 0;
+        var txt = "";
+        var speed = 80;
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("mainheader").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        function submitting(event) {
+            if (event.keyCode == "13" || event.key == "Enter") {
+                var name = document.getElementById("name1");
+                name.style.display = "none";
+                txt = "Welcome To DRIPLER " + name.value + "!";
+                typeWriter();
+            }
+        }
+
+        function inputting() {
+            var name = document.getElementById("name1");
+            name.addEventListener("keypress", function(event) {
+                submitting(event);
+            });
+        }
+
+        inputting();
+    </script>
+</body>

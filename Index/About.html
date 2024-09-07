@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- meta tags for SEO -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion Blogs">
+    <meta name="keywords" content="Fashion, Blogs">
+    <meta name="author" content="Raziq Bin Ridzuan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <!-- link to external CSS file and icon file -->
+    <link rel="stylesheet" href="../CSS/style2.css">
+    <link rel="icon" type="image/x-icon" href="../img/D-icon.png">
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <nav class="top" id="fade">
+        <div id="day"></div>
+        <a href="Home Page.html" class="Nav-Logo">DRIPLER</a>
+
+        <div id="date"></div>
+
+        <nav id="menu">
+            <hr id="toprotate">
+            <hr id="midfade">
+            <hr id="botrotate">
+        </nav>
+
+        <!-- navigation menu -->
+        <ul id="navigationmenu">
+        </ul>
+    </nav>
+    <!-- script to fade in/out navigation bar and menu on scroll -->
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("fade").style.top = "0";
+                document.getElementById("navigationmenu").style.height = "calc(100vh - 70px) ";
+            } else {
+                document.getElementById("fade").style.top = "-70px ";
+                document.getElementById("navigationmenu").style.height = "100vh ";
+
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+    <!-- script to display current time and date in navigation bar -->
+    <script>
+        function time() {
+            const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+            var d = new Date();
+            let day = weekday[d.getDay()];
+            let month = months[d.getMonth()];
+
+            document.getElementById("day").innerHTML = day + " , " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2);
+            document.getElementById("date").innerHTML = d.getDate() + " " + month + " " + d.getFullYear();
+        }
+
+        setInterval(time, 1000);
+    </script>
+    <!-- script for menu icon to open and close navigation menu -->
+    <script>
+        var status = 1
+        document.getElementById("menu").addEventListener("click", statusmenu);
+
+        function statusmenu() {
+
+            if (status == 1) {
+                document.getElementById("toprotate").style.transform = "translateY(10px) rotate(225deg)";
+                document.getElementById("botrotate").style.transform = "translateY(-10px) rotate(-45deg)";
+                document.getElementById("midfade").style.opacity = "0";
+                document.getElementById("toprotate").style.width = "80%";
+                document.getElementById("botrotate").style.width = "80%";
+                document.getElementById("menu").style.transform = "translateX(-30vw)";
+                document.getElementById("navigationmenu").style.right = "0vw";
+                document.getElementById("navigationmenu").setAttribute("class", "addwidth");
+                menunav();
+
+
+                status = 0;
+            } else if (status == 0) {
+                document.getElementById("toprotate").style.transform = "translateY(0) rotate(0)";
+                document.getElementById("botrotate").style.transform = "translateY(0) rotate(0)";
+                document.getElementById("midfade").style.opacity = "1";
+                document.getElementById("toprotate").style.width = "50%";
+                document.getElementById("botrotate").style.width = "50%";
+                document.getElementById("menu").style.transform = "translateX(0px)";
+                document.getElementById("navigationmenu").innerHTML = "";
+                document.getElementById("navigationmenu").style.right = "-30vw";
+                document.getElementById("navigationmenu").removeAttribute("class", "addwidth");
+                status = 1;
+
+            }
+
+        }
+
+        function menunav() {
+
+            const object = ["Home", "About", "Blogs", "Fashion Icons"];
+            const link = ["Home Page.html", "About Page.html", "Blogs.html", "Fashion Icons.html"];
+            for (let i = 0; i < object.length; i++) {
+                setTimeout(function() {
+                    const navi = document.createElement("li");
+                    const para = document.createElement("a");
+                    para.href = link[i];
+                    para.innerText = object[i];
+                    navi.appendChild(para);
+                    document.getElementById("navigationmenu").appendChild(navi);
+                    var parent = document.getElementById("navigationmenu");
+                    parent.getElementsByTagName("a").setAttribute("class", "menulist");
+                }, i * 100);
+            }
+        }
+    </script>
+    <!-- About me section -->
+    <div class="display-pieces-header-box">
+        <!-- section header -->
+        <h1 class="all-section-headers">
+            About Me
+        </h1>
+    </div>
+    <!-- About me box -->
+    <div class="aboutpage-aboutme-section">
+        <div class="aboutpage-aboutme-main">
+            <div class="aboutpage-aboutme-main-image">
+                <!-- image -->
+                <img src="../img/hp/bryan kith white jacket.jpeg">
+            </div>
+            <div class="aboutpage-aboutme-main-text">
+                <!-- About me description -->
+                <p>Hi there, my name is <b>Raziq</b>,</p>
+                <p>I'm the creator behind <b>Dripler</b>, a fashion blog that showcases the latest fashion trends and styles. My passion for fashion started during my holiday to Australia where I was struck by the fashion-forward outfits worn by the locals.</p>
+                <p>Being a college student at that time, I was inspired to start experimenting with my own style, and I realized that fashion was more than just clothes - it was a way to express my personality and creativity. This led me to create Dripler,
+                    a platform where I could share my love for fashion and inspire others to find their own unique style.</p>
+                <p>Through Dripler, I review outfits, provide styling tips, and interview people about their fashion choices. My blog has gained recognition within the fashion community and has been featured on various fashion platforms.</p>
+                <p>Currently based in Selangor, Malaysia, I love exploring the city's diverse fashion scene and incorporating my own personal touch to my outfits. When I'm not blogging about fashion, I enjoy traveling, trying out new restaurants, and spending
+                    time with my family and friends.</p>
+            </div>
+        </div>
+    </div>
+    <!-- about passion -->
+    <div class="display-pieces-header-box">
+        <!-- passion header -->
+        <h1 class="all-section-headers">
+            Passion For Fashion
+        </h1>
+
+    </div>
+    <!-- passion paragraphs -->
+    <div class="aboutpage-passion">
+        <p>
+            My passion for fashion started to emerge during my holiday to Australia, where I was exposed to a different fashion culture that was unlike anything I had experienced before. I had always been interested in fashion, but this trip gave me a new perspective
+            and ignited a passion that has continued to grow. During my trip to Australia, I was struck by how the fashion culture was so different from what I was used to in my hometown. I saw people experimenting with bold prints, vibrant colors, and
+            unique styles that were not commonly seen in the fashion culture back home. Seeing all of these different styles sparked a new interest in me, and I became eager to learn more about how fashion is used as a means of self-expression and creativity.
+        </p>
+        <p>Upon returning home, I decided to take my interest in fashion to the next level. I started a fashion blog where I could share my thoughts on the latest fashion trends and styles, as well as my own personal fashion journey. I used my blog as a
+            platform to explore different fashion cultures and highlight the unique fashion choices of people from all around the world. Starting a fashion blog allowed me to share my passion for fashion with a wider audience. It also gave me a platform
+            to express myself creatively and connect with other fashion enthusiasts. I enjoyed exploring different fashion cultures and showcasing the unique styles of people from all over the world. Through my blog, I was able to learn more about the
+            history of fashion and how it has evolved over time.</p>
+        <p>As my blog started to gain more traction, I began to realize that my passion for fashion went beyond just blogging about it. I became interested in interviewing people about their fashion and style choices, and started to include these interviews
+            on my blog. I found that interviewing people about their fashion choices was an excellent way to connect with them on a deeper level. I enjoyed hearing people's stories about how they express themselves through fashion and what inspired their
+            unique style choices. It was fascinating to see how different people interpreted fashion in their own unique way, and how it played a role in their daily lives.</p>
+        <p>Through these interviews, I discovered that fashion is not just about the clothes we wear, but it's a reflection of our personality, values, and culture. I began to see how fashion connects people from all walks of life and how it has the power
+            to bring people together. My interviews taught me that fashion is much more than just a form of self-expression or creativity. It's a way for people to communicate their values, personality, and culture. I discovered that fashion has the power
+            to connect people from all walks of life and bring them together, regardless of their background or beliefs.</p>
+        <p>Over time, my blog became more focused on interviewing people and featuring their fashion choices. I started attending fashion events and shows, and even collaborated with local designers and boutiques to showcase their work on my blog. As my
+            blog continued to grow, I became more interested in attending fashion events and shows. These events allowed me to meet new people and learn more about the fashion industry. I started collaborating with local designers and boutiques, which
+            allowed me to showcase their work on my blog and support their businesses. I loved seeing how fashion brought people together and how it had the power to support local businesses and communities.</p>
+        <p>Through my blog, I hope to share my love of fashion with others and inspire them to embrace their own unique sense of style. Whether through reviewing outfits, interviewing people about their fashion choices, or attending fashion events, I believe
+            that fashion has the power to connect people and bring out the best in us.</p>
+    </div>
+    <!-- Footer section -->
+    <div class="footer">
+        <!-- footer logo -->
+        <div class="foot1">
+            <h1>DRIPLER</h1>
+            <h3>Fashions fade. Style is eternal.</h3>
+        </div>
+        <hr>
+        <!-- contacts section -->
+        <div class="foot2">
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-facebook-100.png">
+                </div>
+                <a href="https://www.facebook.com/">www.facebook.com/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-circled-envelope-100.png">
+                </div>
+                <a href="https://mail.google.com/mail/">DRIPLER@gmail.com</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-pinterest-100.png">
+                </div>
+                <a href="https://www.pinterest.com/">pin.it/DRIPLER</a>
+            </div>
+            <div class="foot2-contacts">
+                <div class="foot2-contacts-icon">
+                    <img src="../img/hp/icons8-twitter-circled-100.png">
+                </div>
+                <a href="https://twitter.com/explore">twitter.com/DRIPLER</a>
+            </div>
+        </div>
+    </div>
+</body>
